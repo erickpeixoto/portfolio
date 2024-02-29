@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./components/theme-provider";
-import { TRPCReactProvider } from "@/trpc/react";
+import { Providers } from "@/app/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-        </ThemeProvider>
+        <main className="p-[100px]">
+          <Providers>{children}</Providers>
+        </main>
       </body>
     </html>
   );
