@@ -7,8 +7,13 @@ import { TRPCReactProvider } from "@/trpc/react";
 
 export function Providers({ children }: ThemeProviderProps) {
   return (
-    <ThemeProvider defaultTheme="system" enableSystem disableTransitionOnChange>
-      {children}
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <TRPCReactProvider>{children}</TRPCReactProvider>
     </ThemeProvider>
   );
 }
