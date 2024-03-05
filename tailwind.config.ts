@@ -29,7 +29,10 @@ const config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        bodyBg: "hsl(var(--body-bg))",
+        bodyBg: {
+          DEFAULT: "hsl(var(--body-bg))",
+          foreground: "hsl(var(--body-bg-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -54,6 +57,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        identity: "#7E74F1",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -77,6 +81,8 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         serif: ["var(--font-serif)", ...fontFamily.serif],
+        inter: ["var(--font-inter)", ...fontFamily.sans],
+        jaka: ["var(--font-jaka)", ...fontFamily.serif],
       },
     },
   },
