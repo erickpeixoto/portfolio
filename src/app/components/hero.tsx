@@ -29,12 +29,12 @@ export default function Hero() {
       {/* First element */}
       <div className="mt-20 pl-12">
         <Spotlight className="-top-8 -left-3" fill="#C2BEBE" />
-        <p className="text-gray-500 uppercase leading-loose tracking-[.25em] font-thin">
+        <p className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em] dark:font-thin">
           <span className="after:content-['_↗'] mr-3"></span>
           my name is
         </p>
         <TypewriterEffect words={logoWords} />
-        <p className="font-inter mt-4 font-thin text-base max-w-lg text-left text-gray-300">
+        <p className="font-inter mt-4 dark:font-thin text-base max-w-lg text-left text-gray-500 dark:text-gray-300 ">
           Seasoned developer with 10+ years' experience, specializing in React,
           across startups and major corporations, delivering innovative and
           efficient software solutions.
@@ -44,7 +44,7 @@ export default function Hero() {
           <HoverCard>
             <HoverCardTrigger>
               <Linkedin
-                className="text-gray-300 hover:text-identity 
+                className="dark:text-gray-300 text-gray-500 hover:text-identity 
                 transitoion duration-300 ease-in-out cursor-pointer
                 "
               />
@@ -76,14 +76,14 @@ export default function Hero() {
           </HoverCard>
           <Link href="https://github.com/erickpeixoto/" target="_blank">
             <Github
-              className="text-gray-300 hover:text-identity 
+              className="dark:text-gray-300 text-gray-500 hover:text-identity 
                 transitoion duration-300 ease-in-out
                 "
             />
           </Link>
           <Link href="mailto:erickepeixoto@gmail.com">
             <MailIcon
-              className="text-gray-300 hover:text-identity 
+              className="dark:text-gray-300 text-gray-500 hover:text-identity 
                 transitoion duration-300 ease-in-out
                 "
             />
@@ -92,7 +92,7 @@ export default function Hero() {
           <HoverCard>
             <HoverCardTrigger>
               <FileText
-                className="text-gray-300 hover:text-identity
+                className="dark:text-gray-300 text-gray-500 hover:text-identity
                         transitoion duration-300 ease-in-out cursor-pointer
                         "
               />
