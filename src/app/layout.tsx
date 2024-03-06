@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, plusJakartaSans.variable)}>
-        <main className="m-[100px] flex flex-col min-h-screen items-center justify-between space-y-8 bg-white dark:bg-black">
+        <main className="m-[80px] min-h-screen items-center justify-between space-y-8 bg-white dark:bg-black">
           <Providers>
             <NavBar />
             {children}
