@@ -41,27 +41,40 @@ export default function Hero() {
         </p>
         {/* Social Network Items */}
         <div className="mt-10 flex gap-4">
-          <Link href="https://www.linkedin.com/in/erickpeixoto/">
-            <HoverCard>
-              <HoverCardTrigger>
-                <Linkedin
-                  className="text-gray-300 hover:text-identity 
-                transitoion duration-300 ease-in-out
+          <HoverCard>
+            <HoverCardTrigger>
+              <Linkedin
+                className="text-gray-300 hover:text-identity 
+                transitoion duration-300 ease-in-out cursor-pointer
                 "
-                />
-              </HoverCardTrigger>
-              <HoverCardContent>
-                <div className="p-4">
-                  <p className="font-bold text-blue-400">LinkedIn</p>
-                  <p>
-                    Let's connect! Find me on LinkedIn to explore professional
-                    opportunities and collaborations.
-                  </p>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
-          </Link>
-          <Link href="https://github.com/erickpeixoto/">
+              />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <div className="p-4 flex gap-3 flex-col">
+                <Link
+                  href="https://www.linkedin.com/in/erickpeixoto/"
+                  className="text-blue-400"
+                  target="_blank"
+                >
+                  LinkedIn
+                </Link>
+                <p>
+                  Let's connect! Find me on LinkedIn to explore professional
+                  opportunities and collaborations.
+                </p>
+                <p>
+                  <Link
+                    href="https://www.linkedin.com/in/erickpeixoto/"
+                    className="text-blue-400"
+                    target="_blank"
+                  >
+                    Click here
+                  </Link>
+                </p>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+          <Link href="https://github.com/erickpeixoto/" target="_blank">
             <Github
               className="text-gray-300 hover:text-identity 
                 transitoion duration-300 ease-in-out
@@ -75,23 +88,29 @@ export default function Hero() {
                 "
             />
           </Link>
-          <Link href="/resume">
-            <HoverCard>
-              <HoverCardTrigger>
-                <FileText
-                  className="text-gray-300 hover:text-identity
-                        transitoion duration-300 ease-in-out
+
+          <HoverCard>
+            <HoverCardTrigger>
+              <FileText
+                className="text-gray-300 hover:text-identity
+                        transitoion duration-300 ease-in-out cursor-pointer
                         "
-                />
-              </HoverCardTrigger>
-              <HoverCardContent>
-                <div className="p-4">
-                  <p className="font-bold text-blue-400">Download my resume</p>
-                  <p>Find my resume here. It's a PDF file.</p>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
-          </Link>
+              />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <div className="p-4 flex gap-4 flex-col">
+                <p className="font-bold text-blue-400">Resume</p>
+                <p>Find my resume here. It's a PDF file.</p>
+                <Link
+                  href="https://www.linkedin.com/in/erickpeixoto/"
+                  className="text-blue-400"
+                  target="_blank"
+                >
+                  Click here to download
+                </Link>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
       </div>
       {/* Second Element */}
