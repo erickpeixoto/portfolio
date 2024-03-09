@@ -363,7 +363,7 @@ const content = [
 
 export function Skills() {
   return (
-    <div className="p-10">
+    <div className="pt-10 pb-10">
       <StickyScroll content={content} />
     </div>
   );
