@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "@mantine/core/styles.css";
 
+import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "@/app/providers";
 import { NavBar } from "@/app/components/navBar";
 import { cn } from "@/lib/utils";
@@ -24,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ColorSchemeScript />
       <body className={cn(inter.className, plusJakartaSans.variable)}>
         <main className="m-[80px] min-h-screen items-center justify-between space-y-8 bg-white dark:bg-black">
           <Providers>
