@@ -5,8 +5,9 @@ import { ThemeProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
 import { TRPCReactProvider } from "@/trpc/react";
 import { NextUIProvider } from "@nextui-org/react";
+import { MantineProvider, createTheme } from "@mantine/core";
 
-// const theme = createTheme({});
+const theme = createTheme({});
 
 export function Providers({ children }: ThemeProviderProps) {
   return (
@@ -16,11 +17,11 @@ export function Providers({ children }: ThemeProviderProps) {
       enableSystem
       disableTransitionOnChange
     >
-      <NextUIProvider>
-        {/* <MantineProvider theme={theme}> */}
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-        {/* </MantineProvider> */}
-      </NextUIProvider>
+      <MantineProvider theme={theme}>
+        <NextUIProvider>
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </NextUIProvider>
+      </MantineProvider>
     </ThemeProvider>
   );
 }
