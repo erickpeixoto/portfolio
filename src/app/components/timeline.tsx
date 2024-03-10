@@ -1,17 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Timeline as TimelineMantine, Text } from "@mantine/core";
-import {
-  FaBusinessTime,
-  FaCode,
-  FaUsers,
-  FaRocket,
-  FaRegLightbulb,
-} from "react-icons/fa";
+import { Timeline as TimelineMantine, Text, Avatar } from "@mantine/core";
+import Link from "next/link";
 
 export function Timeline() {
-  const [activeItem, setActiveItem] = useState(2);
+  const [activeItem, setActiveItem] = useState(4);
 
   const handleItemClick = (index: number) => {
     setActiveItem(index);
@@ -21,11 +15,48 @@ export function Timeline() {
     <TimelineMantine
       color="violet"
       active={activeItem}
-      bulletSize={36}
+      bulletSize={40}
       reverseActive
+      className="p-5"
     >
       <TimelineMantine.Item
-        bullet={<FaBusinessTime size={12} />}
+        bullet={
+          <Link
+            target="_blank"
+            href={
+              "https://calendly.com/erickepeixoto/discover-opportunities-with-erick-eduardo"
+            }
+            title="Click to book a time with me"
+          >
+            <Avatar
+              className="cursor-pointer"
+              size={35}
+              radius="xl"
+              color="violet"
+              src="/calendar.png"
+            />
+          </Link>
+        }
+        className="dark:text-white"
+        title="Be Part of This Story"
+      >
+        <Text color="dimmed" size="sm">
+          If you're interested in working together or want to chat about
+          technology, feel free to reach out!
+        </Text>
+        <Text size="xs" mt={4} color="dimmed">
+          Present and Beyond
+        </Text>
+      </TimelineMantine.Item>
+      <TimelineMantine.Item
+        bullet={
+          <Avatar
+            className="cursor-pointer"
+            size={35}
+            radius="xl"
+            src="/locorumca_logo.png"
+          />
+        }
         className="dark:text-white"
         title="Senior Full Stack Engineer at Locorum"
         onClick={() => handleItemClick(4)}
@@ -40,7 +71,14 @@ export function Timeline() {
       </TimelineMantine.Item>
 
       <TimelineMantine.Item
-        bullet={<FaUsers size={12} />}
+        bullet={
+          <Avatar
+            className="cursor-pointer"
+            size={35}
+            radius="xl"
+            src="/fuerza.png"
+          />
+        }
         className="dark:text-white"
         title="Tech Lead | Senior Developer at Fuerza Studio"
         onClick={() => handleItemClick(3)}
@@ -56,7 +94,14 @@ export function Timeline() {
       </TimelineMantine.Item>
 
       <TimelineMantine.Item
-        bullet={<FaCode size={12} />}
+        bullet={
+          <Avatar
+            className="cursor-pointer"
+            size={35}
+            radius="xl"
+            src="/appgami.png"
+          />
+        }
         className="dark:text-white"
         title="Senior Full Stack Developer at Appgami"
         onClick={() => handleItemClick(2)}
@@ -71,7 +116,14 @@ export function Timeline() {
       </TimelineMantine.Item>
 
       <TimelineMantine.Item
-        bullet={<FaRocket size={12} />}
+        bullet={
+          <Avatar
+            className="cursor-pointer"
+            size={35}
+            radius="xl"
+            src="/skill.png"
+          />
+        }
         className="dark:text-white"
         title="Senior Full Stack Developer at Grupo Skill"
         onClick={() => handleItemClick(1)}
@@ -86,7 +138,14 @@ export function Timeline() {
       </TimelineMantine.Item>
 
       <TimelineMantine.Item
-        bullet={<FaRegLightbulb size={12} />}
+        bullet={
+          <Avatar
+            className="cursor-pointer"
+            size={35}
+            radius="xl"
+            src="/accon.png"
+          />
+        }
         className="dark:text-white"
         title="Full Stack Developer at Accon Delivery"
         onClick={() => handleItemClick(0)}

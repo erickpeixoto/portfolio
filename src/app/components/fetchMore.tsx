@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 
 import { useInView } from "react-intersection-observer";
 import { loadProjects } from "@/server/mock/projects";
-import { HoverEffect, Project } from "@/app/components/card-hover-effect";
+import { HoverEffect } from "@/app/components/card-hover-effect";
 import Image from "next/image";
+import { Project } from "@/server/mock/project.types";
 
 export default function LoadMore() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -16,20 +17,18 @@ export default function LoadMore() {
   useEffect(() => {
     setIsLoading(true);
     if (inView) {
-      loadProjects(page).then((data) => {
+      loadProjects(page, 3).then((data) => {
         setProjects([...projects, ...data]);
         setPage(page + 1);
       });
       setIsLoading(false);
     }
-    console.log({ inView, page });
-  }, [inView]);
+  }, [inView, projects]);
 
   return (
     <>
       <div className="w-full h-[800px] -mt-20">
         <HoverEffect items={projects} />
-        {JSON.stringify({ page, isLoading, inView })}
         <div ref={ref}>
           {inView && isLoading && (
             <Image

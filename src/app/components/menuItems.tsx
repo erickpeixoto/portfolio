@@ -30,7 +30,7 @@ export const MenuItem = ({
         transition={{ duration: 0.5 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
       >
-        <Link href={item.toLowerCase()}>{item}</Link>
+        <Link href={"/" + item.toLowerCase()}>{item}</Link>
       </motion.p>
       {active !== null && (
         <motion.div
@@ -42,13 +42,10 @@ export const MenuItem = ({
             <div className="absolute top-[calc(100%_+_1.7rem)] left-1/2 transform -translate-x-1/2">
               <motion.div
                 transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
+                layoutId="active"
                 className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
+                <motion.div layout className="w-max h-full p-4">
                   {children}
                 </motion.div>
               </motion.div>

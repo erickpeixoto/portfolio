@@ -1,20 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Project } from "@/server/mock/project.types";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Image } from "@nextui-org/react";
 import { SiReact } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
-
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-  image: string;
-}
 
 const variants = {
   hidden: { opacity: 0 },
@@ -53,7 +46,7 @@ export const HoverEffect = ({
           key={idx}
         >
           <Link
-            href={`${item.link}/${item.id}`}
+            href={`/projects/${item.id}`}
             key={item?.id}
             className="relative group  block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}
@@ -91,15 +84,14 @@ export const Card = ({ project }: { project: Project }) => {
         "rounded-2xl h-full w-full overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-2 p-3"
       }
     >
-      <div className="relative z-50 h-[250px]">
-        <Image isZoomed src={`/${project.image}`} alt={project.image} />
+      <div className="relative z-50 h-[250px] flex justify-between flex-col">
+        <Image
+          src={project.image}
+          alt={project.image}
+          width={400}
+          height={200}
+        />
         <div className="pt-3 text-center text-lg">{project.title}</div>
-        <div className="flex justify-between">
-          <div className="flex gap-3 text-identity opacity-2">
-            <TbBrandNextjs size={20} />
-            <SiReact size={20} />
-          </div>
-        </div>
       </div>
     </div>
   );
