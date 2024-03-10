@@ -25,7 +25,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative pt-6">
+    <div onMouseEnter={() => setActive(item)} className="relative pt-6 w-full">
       <motion.p
         transition={{ duration: 0.5 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
