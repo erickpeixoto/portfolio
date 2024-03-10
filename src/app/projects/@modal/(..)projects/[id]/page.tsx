@@ -1,15 +1,18 @@
-import Modal from "@/app/components/ui/modal";
-import { projects } from "@/server/mock/projects";
+import ProjectDetails from "@/app/components/project-details";
+import dynamic from "next/dynamic";
 
-export default function ProjectDetails({
+const ModalDynamic = dynamic(() => import("@/app/components/ui/modal"));
+
+export default function DetailsPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
-  const project = projects.find((project) => project.id === id);
   return (
     <>
-      <Modal title="Project Details">Hello {JSON.stringify({ project })}</Modal>
+      <ModalDynamic title="Project Details">
+        <ProjectDetails id={id} />
+      </ModalDynamic>
     </>
   );
 }

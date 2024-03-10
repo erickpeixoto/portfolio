@@ -1,10 +1,9 @@
-import { projects } from "@/server/mock/projects";
+import ProjectDetails from "@/app/components/project-details";
 
-export default function ProjectDetails({
+export default async function PDetails({
   params: { id },
 }: {
   params: { id: string };
 }) {
-  const project = projects.find((project) => project.id === id);
-  return <>{JSON.stringify({ project })}</>;
+  return <ProjectDetails id={id} />;
 }
