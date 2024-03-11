@@ -37,7 +37,7 @@ export default function ModalComponent({
         isDismissable={true}
         backdrop="blur"
         size="5xl"
-        className="backdrop-blur-sm bg-identity/35 border border-identity"
+        className="backdrop-blur-sm dark:bg-identity/35 bg-identity/80 border dark:border-identity border-white-500 text-white "
       >
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>

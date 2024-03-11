@@ -36,7 +36,7 @@ export default function ContactForm() {
         <Textarea
           type="message"
           label="Message"
-          placeholder="Leave you message here"
+          placeholder="Drop me a message here"
         />
         <Button variant="shadow" color="primary">
           Send

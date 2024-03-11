@@ -29,12 +29,12 @@ export default function Hero() {
       {/* First element */}
       <div className="mt-20 pl-12">
         <Spotlight className="-top-8 -left-3" fill="#C2BEBE" />
-        <p className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em] dark:font-thin">
+        <p className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em]">
           <span className="after:content-['_↗'] mr-3"></span>
           my name is
         </p>
         <TypewriterEffect words={logoWords} />
-        <p className="font-inter mt-4 dark:font-thin text-base max-w-lg text-left text-gray-500 dark:text-gray-300 ">
+        <p className="font-inter mt-4 text-base max-w-lg text-left text-gray-500 dark:text-gray-400 ">
           Seasoned developer with 10+ years' experience, specializing in React,
           across startups and major corporations, delivering innovative and
           efficient software solutions.

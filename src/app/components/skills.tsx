@@ -263,7 +263,7 @@ const content = [
           meeting today's web standards. Through my mastery of React.js, I
           create interactive and state-of-the-art user interfaces that are both
           intuitive and delightful to use.
-          <div className="mt-2">
+          <div className="-mt-3">
             <ButtonVideo
               description="Watch the Video"
               URI="https://calendly.com/tech-lead"
@@ -291,7 +291,7 @@ const content = [
           comprehensive database systems including SQL and NoSQL, I enhance
           backend operations. ORM tools like Prisma refine data management,
           while REST and GraphQL APIs facilitate seamless data exchange.
-          <div className="mt-2">
+          <div className="-mt-3">
             <ButtonVideo
               description="Watch the Video"
               URI="https://calendly.com/tech-lead"
@@ -318,7 +318,7 @@ const content = [
           that teams are agile, processes are optimized, and solutions are
           scalable, leading our projects to exceed business objectives and set
           new benchmarks in the industry.
-          <div className="mt-2">
+          <div className="-mt-3">
             <ButtonVideo
               description="Watch the Video"
               URI="https://calendly.com/tech-lead"
@@ -346,8 +346,7 @@ const content = [
           CircleCI, deploying via Vercel for front-end excellence, and
           leveraging AWS for scalable cloud infrastructure. My approach
           emphasizes seamless, automated workflows and effective client
-          communication, ensuring project delivery that is both innovative and
-          aligned with business objectives.
+          communication, ensuring project delivery that is both innovative.
           <div className="-mt-3">
             <ButtonVideo
               description="Dive in-depth on it"
