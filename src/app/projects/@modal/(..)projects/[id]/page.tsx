@@ -1,7 +1,9 @@
 import ProjectDetails from "@/app/components/project-details";
 import dynamic from "next/dynamic";
 
-const ModalDynamic = dynamic(() => import("@/app/components/ui/modal"));
+const ModalDynamic = dynamic(() => import("@/app/components/ui/modal"), {
+  ssr: false,
+});
 
 export default function DetailsPage({
   params: { id },

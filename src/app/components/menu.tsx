@@ -23,6 +23,7 @@ export const Menu = ({ className }: { className?: string }) => {
         >
           Skills
         </Link>
+
         <Link
           className={cn(
             "pt-6 hover:text-identity transition",
@@ -33,15 +34,15 @@ export const Menu = ({ className }: { className?: string }) => {
         >
           Journey
         </Link>
-        <MenuItem setActive={setActive} active={active} item="Contact">
-          <ContactForm />
-        </MenuItem>
         <Link
           className="pt-6 hover:text-identity transition"
           href={"https://www.linkedin.com/in/erickpeixoto/"}
         >
           Resume
         </Link>
+        <MenuItem setActive={setActive} active={active} item="Contact">
+          <ContactForm />
+        </MenuItem>
       </MenuItems>
     </div>
   );

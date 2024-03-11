@@ -1,8 +1,6 @@
+import { VideoSteps } from "@/app/components/videosSteps";
+
 const LookAtMePage = () => {
-  return (
-    <div>
-      <h1>Look at me Page</h1>
-    </div>
-  );
+  return <VideoSteps />;
 };
 export default LookAtMePage;
