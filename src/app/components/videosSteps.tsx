@@ -39,14 +39,11 @@ export function VideoSteps() {
   return (
     <div className="flex flex-row gap-3 justify-between p-5">
       <div className="w-full h-screen flex flex-col">
-        <div className="w-2/3 mt-8">
-          <HeaderTitle text="Career Highlights" />
-        </div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="w-full border-2 border-identity/65 rounded-lg overflow-hidden shadow-lg p-5 -mt-20"
+          className="w-full border-2 border-identity/65 rounded-lg overflow-hidden shadow-lg p-5"
           key={active}
         >
           <Video

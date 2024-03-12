@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Toaster } from "sonner";
+
 import "./globals.css";
 import "@mantine/core/styles.css";
 
@@ -32,6 +34,7 @@ export default function RootLayout({
           <Providers>
             <NavBar />
             {children}
+            <Toaster richColors position="top-right" />
           </Providers>
         </main>
       </body>

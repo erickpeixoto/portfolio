@@ -32,6 +32,7 @@ import {
 } from "react-icons/si";
 import { GoGoal } from "react-icons/go";
 import ButtonVideo from "./buttonVideoCall";
+import { toast } from "sonner";
 
 const stack = {
   front: () => [
@@ -266,8 +267,9 @@ const content = [
           <div className="-mt-3">
             <ButtonVideo
               description="Watch the Video"
-              URI="https://calendly.com/tech-lead"
+              URI=""
               className="-mt-2 float-end"
+              onClick={() => toast.info("coming soon!")}
             />
           </div>
         </div>
@@ -294,8 +296,9 @@ const content = [
           <div className="-mt-3">
             <ButtonVideo
               description="Watch the Video"
-              URI="https://calendly.com/tech-lead"
+              URI=""
               className="-mt-2 float-end"
+              onClick={() => toast.info("coming soon!")}
             />
           </div>
         </div>
@@ -321,8 +324,9 @@ const content = [
           <div className="-mt-3">
             <ButtonVideo
               description="Watch the Video"
-              URI="https://calendly.com/tech-lead"
+              URI=""
               className="-mt-2 float-end"
+              onClick={() => toast.info("Coming soon!")}
             />
           </div>
         </div>
@@ -332,7 +336,7 @@ const content = [
   {
     title: "Mastering Development Processes",
     description:
-      "Through automating build and deployment processes with CircleCI, hosting on Vercel, managing infrastructure on AWS, and maintaining open lines of communication with clients via Google Meet, I champion a process-driven culture. This approach not only enhances efficiency and scalability but also ensures that our deliverables are perfectly aligned with our clients' needs and expectations.",
+      "Through automating build and deployment processes with CircleCI, hosting on Vercel, managing infrastructure on AWS, and maintaining open lines of communication with clients via Google Meet, I champion a process-driven culture. This approach not only enhances efficiency and scalability but also ensures that our deliverables are perfectly aligned with our client's needs and expectations.",
     content: (
       <div className="border  border-slate/[0.2] dark:border-white/[0.2] flex flex-col items-start  mx-auto p-4 relative h-full">
         <EvervaultCard text="technology" />
@@ -346,13 +350,15 @@ const content = [
           CircleCI, deploying via Vercel for front-end excellence, and
           leveraging AWS for scalable cloud infrastructure. My approach
           emphasizes seamless, automated workflows and effective client
-          communication, ensuring project delivery that is both innovative.
+          communication, ensuring innovative project delivery.
           <div className="-mt-3">
             <ButtonVideo
               description="Dive in-depth on it"
-              URI="https://calendly.com/tech-lead"
+              URI=""
               className="-mt-2 float-end"
+              onClick={() => toast.info("coming soon!")}
             />
+            ´
           </div>
         </div>
       </div>
