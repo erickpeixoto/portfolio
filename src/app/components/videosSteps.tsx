@@ -5,37 +5,46 @@ import { Stepper } from "@mantine/core";
 import { motion } from "framer-motion";
 import Video from "next-video";
 
-import firstVideo from "../../../videos/example.mov";
-import secondVideo from "../../../videos/example.mov";
-import HeaderTitle from "./headerTitle";
+import { Separator } from "@/app/components/ui/separator";
+import firstVideo from "@/videos/example.mov";
+import secondVideo from "@/videos/example.mp4";
+import Link from "next/link";
 
 export function VideoSteps() {
   const [active, setActive] = useState(0);
   const steps = [
     {
       label: "Introduction",
-      description: "Get to know more about my journey.",
-      videoUrl: "https://www.w3schools.com/html/movie.mp4",
+      description:
+        "Discover the milestones of my decade-long journey in software development, leading diverse teams and innovating with cutting-edge technologies",
+      videoSrc: firstVideo,
     },
     {
-      label: "Projects",
-      description: "Deep dive into my projects.",
-      videoUrl:
-        "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4",
+      label: "Signature Projects",
+      description:
+        "A showcase of key projects that highlight my problem-solving skills, from conceptualization to deployment, emphasizing my role in driving project success",
+      videoSrc: secondVideo,
     },
     {
-      label: "Technologies",
-      description: "Explore the technologies I specialize in.",
-      videoUrl:
-        "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_10mb.mp4",
+      label: "Technology Mastery",
+      description:
+        "Dive into my expertise with React.js and Node.js, including advanced techniques and best practices that I've implemented to optimize project outcomes",
+      videoSrc: firstVideo,
     },
     {
-      label: "Conclusion",
-      description: "Final thoughts and contact information.",
-      videoUrl:
-        "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+      label: "Leadership & Innovation",
+      description:
+        "Insights into my leadership approach, fostering team growth, and embracing innovative solutions to meet and exceed project goals",
+      videoSrc: firstVideo,
+    },
+    {
+      label: "Connect & Collaborate",
+      description:
+        "opportunities and collaboration. Here's how you can reach out to me for partnerships, projects, or to exchange ideas about the future of tech",
+      videoSrc: firstVideo,
     },
   ];
+
   return (
     <div className="flex flex-row gap-3 justify-between p-5">
       <div className="w-full h-screen flex flex-col">
@@ -46,14 +55,49 @@ export function VideoSteps() {
           className="w-full border-2 border-identity/65 rounded-lg overflow-hidden shadow-lg p-5"
           key={active}
         >
-          <Video
-            src={active === 0 ? firstVideo : secondVideo}
-            controls
-            accentColor="#7E74F1"
-          />
+          <Video src={steps[active].videoSrc} controls accentColor="#7E74F1" />
         </motion.div>
+        <Separator className="mt-10" />
+        <div className="text-lg my-4">
+          <h2 className="font-bold text-xl mb-2">Segment Insight</h2>
+          <p className="text-base">
+            In this segment{" "}
+            <span className="font-bold">{steps[active].label}</span>, we delve
+            into <strong>{steps[active].description.toLowerCase()}</strong>.
+            This journey highlights the evolution of my career, the challenges
+            overcome, and the milestones reached. Whether you're interested in
+            the technical aspects or the stories behind the projects, there's
+            something here for everyone.
+          </p>
+        </div>
+        <div className="mt-8">
+          <h3 className="font-bold text-lg mb-2">Join the Conversation</h3>
+          <p className="text-base">
+            I'm keen to hear your thoughts, questions, or feedback. Sharing
+            ideas can spark meaningful discussions and lead to collaborative
+            opportunities. Don't hesitate to reach out {":)"}
+          </p>
+
+          <div className="mt-4">
+            <Link
+              href="mailto:erickepeixoto@gmail.com"
+              className="inline-block bg-identity text-white font-bold py-2 px-4 rounded hover:bg-identity/65 transition-colors duration-300"
+            >
+              Send an Email
+            </Link>
+
+            <Link
+              href="https://www.linkedin.com/in/erickpeixoto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
+            >
+              Connect on LinkedIn
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className="w-2/3 h-screen flex place-items-center place-content-center">
+      <div className="w-2/3 h-screen flex place-content-center pl-4">
         <Stepper
           active={active + 1}
           onStepClick={setActive}
@@ -65,7 +109,7 @@ export function VideoSteps() {
               key={index}
               label={step.label}
               description={step.description}
-              style={{ height: 200 }}
+              style={{ height: 100 }}
             />
           ))}
         </Stepper>

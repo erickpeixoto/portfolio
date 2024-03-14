@@ -34,6 +34,16 @@ export const Menu = ({ className }: { className?: string }) => {
         >
           Journey
         </Link>
+
+        <Link
+          className={cn(
+            "pt-6 hover:text-identity transition",
+            pathName === "/blog" && "text-identity border-b-2 border-identity",
+          )}
+          href={"/blog"}
+        >
+          Blog
+        </Link>
         <Link
           className="pt-6 hover:text-identity transition"
           href={"https://www.linkedin.com/in/erickpeixoto/"}

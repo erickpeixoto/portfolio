@@ -117,7 +117,7 @@ export default function Hero() {
       <div className="grid place-content-center">
         <motion.div
           initial={{ width: 0, height: 0, rotate: 0 }}
-          animate={{ width: 300, height: 320, rotate: -10 }}
+          animate={{ width: 300, height: 380, rotate: -10 }}
           transition={{
             duration: 0.5,
             rotate: {
@@ -127,15 +127,15 @@ export default function Hero() {
               restDelta: 2,
             },
           }}
-          className="bg-identity rounded w-[300px] h-[80px] z-0"
+          className="bg-identity rounded w-[380px] h-[80px] z-0"
         >
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ rotate: 10 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[320px] rotate-0 "
+            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[370px] rotate-0 "
           >
-            <Image src="/profile.png" alt="Hero" width={300} height={320} />
+            <Image src="/profile.jpeg" alt="Hero" width={300} height={380} />
           </motion.div>
         </motion.div>
       </div>

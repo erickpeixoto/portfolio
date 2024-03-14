@@ -3,11 +3,9 @@
 import { cn } from "@/lib/utils";
 import { Project } from "@/server/mock/project.types";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import { Image } from "@nextui-org/react";
 import Link from "next/link";
 import { useState } from "react";
-import { SiReact } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -27,7 +25,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 py-10",
         className,
       )}
     >
@@ -42,7 +40,7 @@ export const HoverEffect = ({
             duration: 0.1,
           }}
           viewport={{ amount: 0 }}
-          className="max-w-sm rounded relative w-full"
+          className="rounded relative"
           key={idx}
         >
           <Link
@@ -79,18 +77,15 @@ export const HoverEffect = ({
 
 export const Card = ({ project }: { project: Project }) => {
   return (
-    <div
-      className={
-        "rounded-2xl h-full w-full overflow-hidden bg-white dark:bg-black dark:border-white/[0.2] dark:group-hover:border-slate-700 relative z-2 p-3 dark:border-0 border-2 border-slate-200 "
-      }
-    >
-      <div className="relative z-50 h-[250px] flex justify-between flex-col">
-        <Image
-          src={project.image}
-          alt={project.image}
-          width={400}
-          height={200}
-        />
+    <div className="rounded-2xl h-full w-full overflow-hidden bg-white dark:bg-black dark:border-white/[0.2] dark:group-hover:border-slate-700 relative z-2 p-3 border-2 dark:border-slate-00">
+      <div className="relative z-50 h-full flex justify-between flex-col place-items-center place-content-center">
+        <div>
+          <Image
+            src={project.images?.[0]}
+            alt={project.images?.[0]}
+            width={500}
+          />
+        </div>
         <div className="pt-3 text-center text-lg">{project.title}</div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import { useInView } from "react-intersection-observer";
 import { loadProjects } from "@/server/mock/projects";
 import { HoverEffect } from "@/app/components/card-hover-effect";
@@ -17,13 +16,13 @@ export default function LoadMore() {
   useEffect(() => {
     setIsLoading(true);
     if (inView) {
-      loadProjects(page, 3).then((data) => {
+      loadProjects(page, 2).then((data) => {
         setProjects([...projects, ...data]);
         setPage(page + 1);
       });
       setIsLoading(false);
     }
-  }, [inView, projects]);
+  }, [inView, projects, page]);
 
   return (
     <>
