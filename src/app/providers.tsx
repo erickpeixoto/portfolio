@@ -6,6 +6,7 @@ import { type ThemeProviderProps } from "next-themes/dist/types";
 import { TRPCReactProvider } from "@/trpc/react";
 import { NextUIProvider } from "@nextui-org/react";
 import { MantineProvider, createTheme } from "@mantine/core";
+import PlausibleProvider from "next-plausible";
 
 const theme = createTheme({});
 
@@ -17,11 +18,13 @@ export function Providers({ children }: ThemeProviderProps) {
       enableSystem
       disableTransitionOnChange
     >
-      <MantineProvider theme={theme}>
-        <NextUIProvider>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-        </NextUIProvider>
-      </MantineProvider>
+      <PlausibleProvider domain="erickpeixoto.tech">
+        <MantineProvider theme={theme}>
+          <NextUIProvider>
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+          </NextUIProvider>
+        </MantineProvider>
+      </PlausibleProvider>
     </ThemeProvider>
   );
 }

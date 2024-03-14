@@ -30,7 +30,13 @@ export default function RootLayout({
     <html lang="en">
       <ColorSchemeScript />
       <body className={cn(inter.className, plusJakartaSans.variable)}>
-        <main className="m-[80px] min-h-screen items-center justify-between space-y-8 bg-white dark:bg-black">
+        <div className="xl:hidden text-center p-4 max-w-lg mx-auto bg-gray-100 rounded-lg shadow-md text-identity">
+          Mobile UI coming soon
+        </div>
+        <main
+          className="m-[80px] min-h-screen items-center justify-between space-y-8 bg-white dark:bg-black hidden xl:block max-w-screen-2xl mx-auto border-1 dark:border-identity
+        "
+        >
           <Providers>
             <NavBar />
             {children}
