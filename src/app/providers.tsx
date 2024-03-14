@@ -7,6 +7,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { NextUIProvider } from "@nextui-org/react";
 import { MantineProvider, createTheme } from "@mantine/core";
 import PlausibleProvider from "next-plausible";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const theme = createTheme({});
 
@@ -20,6 +21,7 @@ export function Providers({ children }: ThemeProviderProps) {
     >
       <PlausibleProvider domain="erickpeixoto.tech">
         <MantineProvider theme={theme}>
+          <SpeedInsights />
           <NextUIProvider>
             <TRPCReactProvider>{children}</TRPCReactProvider>
           </NextUIProvider>
