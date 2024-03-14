@@ -1,7 +1,6 @@
 interface CompanyInfo {
   name: string;
   website: string;
-  stackUsed: string[];
 }
 
 interface ProjectInfo {
@@ -15,7 +14,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
+  images: string[];
   companyInfo: CompanyInfo;
   projectInfo: ProjectInfo;
 }
