@@ -19,13 +19,13 @@ const breadcrumbs: BreadcrumbProps = {
 };
 
 export default async function Projects() {
-  const projects = await loadProjects(1, 3);
+  const projects = await loadProjects(1, 2);
 
   return (
     <>
       <BreadcrumbDynamic {...breadcrumbs} />
       <div className="flex p-5 pt-10">
-        <div className="w-1/3 flex flex-col justify-between">
+        <div className="w-1/3 flex flex-col justify-between p-3">
           <Timeline />
         </div>
         <div className="h-40 w-2/3">
