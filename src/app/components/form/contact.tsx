@@ -2,7 +2,33 @@ import { Button, Input, Textarea } from "@nextui-org/react";
 import { MdEmail, MdMessage, MdPhone } from "react-icons/md";
 import { Separator } from "@/app/components/ui/separator";
 
+import { z } from "zod";
+import { toast } from "sonner";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { sendContactFormEmail } from "@/lib/actions/contactForm";
+import { ContactSchema } from "@/lib/schema/contact-schema";
+
+type ContactFormInput = z.infer<typeof ContactSchema>;
+
 export default function ContactForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormInput>({
+    resolver: zodResolver(ContactSchema),
+  });
+
+  const submitForm: SubmitHandler<ContactFormInput> = async (data) => {
+    const response = await sendContactFormEmail(data);
+    if (response?.success) {
+      toast.success("Message sent successfully");
+    } else {
+      toast.error("Failed to send message");
+    }
+  };
+
   return (
     <div className="w-[600px]">
       <h1 className="text-2xl font-bold mb-4">Personal Information</h1>
@@ -31,15 +57,35 @@ export default function ContactForm() {
         </a>
       </div>
       <Separator className="mb-5" />
-      <form action="" className="flex flex-col gap-4">
-        <Input type="email" label="Email" placeholder="Enter your email" />
+      <form onSubmit={handleSubmit(submitForm)} className="flex flex-col gap-4">
+        <Input
+          type="text"
+          label="Name"
+          placeholder="Enter your name"
+          {...register("name")}
+        />
+        {errors.name && <p className="text-identity">{errors.name.message}</p>}
+        <Input
+          type="email"
+          label="Email"
+          placeholder="Enter your email"
+          {...register("email")}
+        />
+        {errors.email && (
+          <p className="text-identity">{errors.email.message}</p>
+        )}
         <Textarea
           type="message"
           label="Message"
           placeholder="Drop me a message here"
+          {...register("message")}
         />
-        <Button variant="shadow" color="primary">
+        {errors.message && (
+          <p className="text-identity">{errors.message.message}</p>
+        )}
+        <Button variant="shadow" color="primary" type="submit">
           Send
+          {isSubmitting && "ing..."}
         </Button>
       </form>
     </div>

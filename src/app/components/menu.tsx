@@ -46,7 +46,10 @@ export const Menu = ({ className }: { className?: string }) => {
         </Link>
         <Link
           className="pt-6 hover:text-identity transition"
-          href={"https://www.linkedin.com/in/erickpeixoto/"}
+          href={
+            "https://utfs.io/f/55cd37bf-204d-4e6a-bdc2-cc43e450b1f4-e1qxd7.pdf"
+          }
+          target="_blank"
         >
           Resume
         </Link>
