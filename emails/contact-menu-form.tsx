@@ -15,9 +15,7 @@ import {
 import { Tailwind } from "@react-email/tailwind";
 import * as React from "react";
 
-const baseUrl = process.env.APP_URL
-  ? `https://${process.env.APP_URL}`
-  : "http://localhost:3000";
+const baseUrl = process.env.APP_URL ?? "";
 
 interface PortfolioNotificationEmailProps {
   name: string;
