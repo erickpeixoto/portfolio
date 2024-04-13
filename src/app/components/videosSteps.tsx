@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import Video from "next-video";
 
 import { Separator } from "@/app/components/ui/separator";
-import firstVideo from "@/videos/example.mov";
-import secondVideo from "@/videos/example.mp4";
+import firstVideo from "@/videos/introduction.mov";
+
 import Link from "next/link";
 
 export function VideoSteps() {
@@ -23,31 +23,31 @@ export function VideoSteps() {
       label: "Signature Projects",
       description:
         "A showcase of key projects that highlight my problem-solving skills, from conceptualization to deployment, emphasizing my role in driving project success",
-      videoSrc: secondVideo,
+      videoSrc: null,
     },
     {
-      label: "Technology Mastery",
+      label: "Technology Insights",
       description:
         "Dive into my expertise with React.js and Node.js, including advanced techniques and best practices that I've implemented to optimize project outcomes",
-      videoSrc: firstVideo,
+      videoSrc: null,
     },
     {
       label: "Leadership & Innovation",
       description:
         "Insights into my leadership approach, fostering team growth, and embracing innovative solutions to meet and exceed project goals",
-      videoSrc: firstVideo,
+      videoSrc: null,
     },
     {
       label: "Connect & Collaborate",
       description:
         "opportunities and collaboration. Here's how you can reach out to me for partnerships, projects, or to exchange ideas about the future of tech",
-      videoSrc: firstVideo,
+      videoSrc: null,
     },
   ];
 
   return (
-    <div className="flex flex-row gap-3 justify-between p-5">
-      <div className="w-full h-screen flex flex-col">
+    <div className="md:flex flex-row gap-3 justify-between p-5">
+      <div className="w-full md:h-screen flex flex-col md:mb-0 mb-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -55,7 +55,17 @@ export function VideoSteps() {
           className="w-full border-2 border-identity/65 rounded-lg overflow-hidden shadow-lg p-5"
           key={active}
         >
-          <Video src={steps[active].videoSrc} controls accentColor="#7E74F1" />
+          {steps[active].videoSrc ? (
+            <Video
+              src={steps[active].videoSrc ?? ""}
+              controls
+              accentColor="#7E74F1"
+            />
+          ) : (
+            <div className="text-center text-lg h-[450px] place-content-center">
+              <p>Video coming soon...</p>
+            </div>
+          )}
         </motion.div>
         <Separator className="mt-10" />
         <div className="text-lg my-4">

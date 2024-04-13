@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface TooltipProps {
   items: {
@@ -16,9 +17,10 @@ interface TooltipProps {
     designation: string;
     icon: React.ReactNode;
   }[];
+  className?: string;
 }
 
-export const AnimatedTooltip = ({ items }: TooltipProps) => {
+export const AnimatedTooltip = ({ items, className }: TooltipProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
@@ -41,7 +43,7 @@ export const AnimatedTooltip = ({ items }: TooltipProps) => {
     <>
       {items.map((item, idx) => (
         <div
-          className="relative group"
+          className={cn("relative group", className)}
           key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}

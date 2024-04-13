@@ -17,15 +17,16 @@ export default function Hero() {
   const logoWords = [
     {
       text: "Erick",
+      className: "text-[32px]",
     },
     {
       text: "Eduardo",
-      className: "text-identity dark:text-identity",
+      className: "text-identity dark:text-identity text-[32px]",
     },
   ];
 
   return (
-    <div className="grid grid-flow-col justify-stretch w-full p-5 gap-5 mt-20">
+    <div className="md:grid grid-flow-col justify-stretch w-full p-5 gap-5 md:mt-20">
       {/* First element */}
       <div className="mt-20 pl-12">
         <Spotlight className="-top-8 -left-3" fill="#C2BEBE" />
@@ -114,7 +115,7 @@ export default function Hero() {
         </div>
       </div>
       {/* Second Element */}
-      <div className="grid place-content-center">
+      <div className="grid place-content-center mt-11 md:mt-0">
         <motion.div
           initial={{ width: 0, height: 0, rotate: 0 }}
           animate={{ width: 300, height: 380, rotate: -10 }}

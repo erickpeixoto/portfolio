@@ -339,7 +339,7 @@ const content = [
       "Through automating build and deployment processes with CircleCI, hosting on Vercel, managing infrastructure on AWS, and maintaining open lines of communication with clients via Google Meet, I champion a process-driven culture. This approach not only enhances efficiency and scalability but also ensures that our deliverables are perfectly aligned with our client's needs and expectations.",
     content: (
       <div className="border  border-slate/[0.2] dark:border-white/[0.2] flex flex-col items-start  mx-auto p-4 relative h-full">
-        <EvervaultCard text="technology" />
+        <EvervaultCard text="Technology" />
 
         <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3">
           <AnimatedTooltip items={stack.process()} />

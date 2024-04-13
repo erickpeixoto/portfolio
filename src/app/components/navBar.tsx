@@ -6,12 +6,14 @@ import Resume from "@/app/components/buttonResume";
 
 export const NavBar = () => {
   return (
-    <nav className="flex gap-3 justify-between w-full px-5 items-center text-black dark:text-white border-b-1 dark:border-slate-800 border-slate-200">
-      <Logo />
-      <LookAtMe />
-      <Menu />
-      <ThemeToggle />
-      <Resume />
-    </nav>
+    <>
+      <nav className="gap-3 justify-between w-full px-5 items-center text-black dark:text-white border-b-1 dark:border-slate-800 border-slate-400 hidden md:flex">
+        <Logo />
+        <LookAtMe />
+        <Menu />
+        <ThemeToggle />
+        <Resume />
+      </nav>
+    </>
   );
 };

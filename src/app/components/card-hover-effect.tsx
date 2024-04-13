@@ -40,7 +40,7 @@ export const HoverEffect = ({
             duration: 0.1,
           }}
           viewport={{ amount: 0 }}
-          className="rounded relative"
+          className="rounded relative w-full"
           key={idx}
         >
           <Link

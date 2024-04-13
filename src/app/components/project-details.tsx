@@ -154,9 +154,9 @@ export default async function ProjectDetails({ id }: { id: string }) {
 
   return (
     <div className="px-5">
-      <div className="flex h-full gap-4 p-4">
-        <div className="w-1/3 p-4 rounded-lg flex flex-col justify-between">
-          <div className="flex flex-col justify-between flex-1">
+      <div className="md:flex  h-full gap-4 p-4 ">
+        <div className="md:w-1/3 p-4 rounded-lg flex flex-col justify-between">
+          <div className="md:flex flex-col justify-between flex-1">
             <div>
               <h2 className="text-2xl font-bold mb-4">Company Information</h2>
               <div className="font-semibold">
@@ -187,7 +187,7 @@ export default async function ProjectDetails({ id }: { id: string }) {
             </div>
           </div>
         </div>
-        <div className="w-2/3 p-4 rounded-lg flex flex-col">
+        <div className="md:w-2/3 p-4 rounded-lg flex flex-col">
           <ProjectCarousel {...data} />
         </div>
       </div>
