@@ -63,7 +63,7 @@
     @apply text-foreground bg-primary;
   }
   html {
-    @apply bg-identity !important;
+    @apply md:bg-identity !important;
   }
 }
 

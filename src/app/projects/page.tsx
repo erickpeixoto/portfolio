@@ -24,11 +24,11 @@ export default async function Projects() {
   return (
     <>
       <BreadcrumbDynamic {...breadcrumbs} />
-      <div className="flex p-5 pt-10">
-        <div className="w-1/3 flex flex-col justify-between p-3">
+      <div className="md:flex p-5 pt-10">
+        <div className="md:w-1/3 flex flex-col justify-between p-3">
           <Timeline />
         </div>
-        <div className="h-40 w-2/3">
+        <div className="h-40 w-full">
           <ScrollShadow hideScrollBar className="w-full h-[800px]">
             <HoverEffect items={projects ?? []} />
             <LoadMore />
