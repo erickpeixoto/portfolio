@@ -9,7 +9,7 @@ export default function Footer() {
         <ContactForm />
       </div>
       <div className="mt-20">
-        <div className="text-sm">
+        <div className="text-sm text-center">
           &copy; {new Date().getFullYear()} Erick Eduardo. All rights reserved.
         </div>
       </div>
