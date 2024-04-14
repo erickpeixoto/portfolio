@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 type MenuItemProps = {
   index: number;
+  toogle: () => void;
 };
 
 const menuVariants = {
@@ -44,7 +45,7 @@ const colorGradient = [
   "from-green-500 to-teal-500",
 ];
 
-export const MenuItem = React.memo(({ index }: MenuItemProps) => {
+export const MenuItem = React.memo(({ index, toogle }: MenuItemProps) => {
   const { href, label } = menuItems[index];
 
   const bgColor = cn(
@@ -61,6 +62,7 @@ export const MenuItem = React.memo(({ index }: MenuItemProps) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       className={cn("mb-4", borderClass)}
+      onClick={toogle}
     >
       <Link href={href}>
         <div className="flex items-center p-2">

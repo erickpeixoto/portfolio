@@ -38,8 +38,8 @@ export const MenuMobile = () => {
       ref={containerRef}
       className="w-full overflow-hidden md:hidden block"
     >
-      <Navigation isOpen={isOpen} />
-      <MenuToggle toggle={() => toggleOpen()} />
+      <Navigation isOpen={isOpen} toogle={toggleOpen} />
+      <MenuToggle toggle={toggleOpen} />
     </motion.nav>
   );
 };

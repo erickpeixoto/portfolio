@@ -13,11 +13,17 @@ const variants = {
   },
 };
 
-export const Navigation = ({ isOpen }: { isOpen: boolean }) => (
+export const Navigation = ({
+  isOpen,
+  toogle,
+}: {
+  isOpen: boolean;
+  toogle: () => void;
+}) => (
   <motion.ul
     variants={variants}
     className={cn(
-      "flex flex-col w-full justify-center items-center p-8 pl-16 bg-white z-40 dark:bg-primary text-black dark:text-white absolute",
+      "flex flex-col w-full justify-center items-center p-8 pl-16 bg-white z-40 dark:bg-primary text-black dark:text-white absolute ",
       isOpen ? "block" : "hidden",
     )}
     initial={false}
@@ -25,7 +31,7 @@ export const Navigation = ({ isOpen }: { isOpen: boolean }) => (
     layout
   >
     {itemIds.map((i) => (
-      <MenuItem index={i} key={i} />
+      <MenuItem index={i} key={i} toogle={toogle} />
     ))}
     <li className="flex gap-2 items-center">
       Change Theme
