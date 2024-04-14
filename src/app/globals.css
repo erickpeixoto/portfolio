@@ -76,3 +76,9 @@
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; 
+  max-width: 100%;
+}
