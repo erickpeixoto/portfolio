@@ -3,6 +3,7 @@ import { LookAtMe } from "@/app/components/lookAtMe";
 import { Menu } from "@/app/components/menu";
 import { ThemeToggle } from "@/app/components/themeToggle";
 import Resume from "@/app/components/buttonResume";
+import { MenuMobile } from "@/app/components/menu/mobile";
 
 export const NavBar = () => {
   return (
@@ -14,6 +15,7 @@ export const NavBar = () => {
         <ThemeToggle />
         <Resume />
       </nav>
+      <MenuMobile />
     </>
   );
 };
