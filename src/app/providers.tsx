@@ -9,6 +9,7 @@ import { MantineProvider, createTheme } from "@mantine/core";
 import PlausibleProvider from "next-plausible";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "sonner";
 
 const theme = createTheme({});
 
@@ -25,7 +26,10 @@ export function Providers({ children }: ThemeProviderProps) {
           <SpeedInsights />
           <Analytics />
           <NextUIProvider>
-            <TRPCReactProvider>{children}</TRPCReactProvider>
+            <TRPCReactProvider>
+              <Toaster richColors position="top-right" />
+              {children}
+            </TRPCReactProvider>
           </NextUIProvider>
         </MantineProvider>
       </PlausibleProvider>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import { Toaster } from "sonner";
 
 import "./globals.css";
 import "@mantine/core/styles.css";
@@ -9,7 +8,6 @@ import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "@/app/providers";
 import { NavBar } from "@/app/components/navBar";
 import { cn } from "@/lib/utils";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -30,12 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-      </Head>
+      </head>
       <ColorSchemeScript />
       <body className={cn(inter.className, plusJakartaSans.variable)}>
         <main
@@ -45,7 +43,6 @@ export default function RootLayout({
           <Providers>
             <NavBar />
             {children}
-            <Toaster richColors position="top-right" />
           </Providers>
         </main>
       </body>
