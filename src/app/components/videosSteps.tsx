@@ -124,7 +124,7 @@ export function VideoSteps() {
                 rel="noopener noreferrer"
                 className="ml-4 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
               >
-                Connect on LinkedIn
+                LinkedIn
               </Link>
             </div>
           </div>
