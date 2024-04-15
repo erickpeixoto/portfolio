@@ -31,10 +31,7 @@ export default function RootLayout({
       </head>
       <ColorSchemeScript />
       <body className={cn(inter.className, plusJakartaSans.variable)}>
-        <main
-          className="m-[80px] min-h-screen items-center justify-between space-y-8 bg-white dark:bg-black xl:block max-w-screen-2xl mx-auto md:border-1 dark:border-identity
-        "
-        >
+        <main className="m-[80px] md:m-[40px] min-h-screen flex items-center justify-between space-y-8 bg-white dark:bg-black xl:block max-w-screen-2xl mx-auto md:border dark:border-identity overflow-x-hidden">
           <Providers>
             <NavBar />
             {children}
