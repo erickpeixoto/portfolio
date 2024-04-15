@@ -27,7 +27,10 @@ export function constructMetadata({
       description,
       images: [
         {
-          url: image,
+          url: "https://erick.peixoto.tech/thumbnail.png",
+          width: 800,
+          height: 600,
+          alt: "Erick Peixoto - Senior Full Stack Developer Portfolio",
         },
       ],
     },
