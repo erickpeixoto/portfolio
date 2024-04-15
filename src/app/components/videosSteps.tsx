@@ -63,14 +63,14 @@ export function VideoSteps() {
             />
           ) : (
             <div className="text-center text-lg h-[450px] place-content-center">
-              <p>Video coming soon...</p>
+              <div>Video coming soon...</div>
             </div>
           )}
         </motion.div>
         <Separator className="mt-10" />
         <div className="text-lg my-4">
           <h2 className="font-bold text-xl mb-2">Segment Insight</h2>
-          <p className="text-base">
+          <div className="text-base">
             In this segment{" "}
             <span className="font-bold">{steps[active].label}</span>, we delve
             into <strong>{steps[active].description.toLowerCase()}</strong>.
@@ -78,15 +78,15 @@ export function VideoSteps() {
             overcome, and the milestones reached. Whether you're interested in
             the technical aspects or the stories behind the projects, there's
             something here for everyone.
-          </p>
+          </div>
         </div>
         <div className="mt-8">
           <h3 className="font-bold text-lg mb-2">Join the Conversation</h3>
-          <p className="text-base">
+          <div className="text-base">
             I'm keen to hear your thoughts, questions, or feedback. Sharing
             ideas can spark meaningful discussions and lead to collaborative
             opportunities. Don't hesitate to reach out {":)"}
-          </p>
+          </div>
 
           <div className="mt-4">
             <Link

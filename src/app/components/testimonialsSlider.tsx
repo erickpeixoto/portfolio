@@ -4,13 +4,18 @@ import { cn } from "@/lib/utils";
 import { CardStack } from "@/app/components/ui/card-stack";
 import { Separator } from "@/app/components/ui/separator";
 import { AnimatedTooltip as Avatar } from "@/app/components/tooltip";
+
 import Image from "next/image";
+import { FaHeart } from "react-icons/fa";
 
 export function Testimonials() {
   return (
     <div className="md:pr-16 w-full md:mb-0 mb-8">
-      <h1 className="text-2xl font-bold mb-5">
-        Testimonials <span className="text-emerald-500">🔥</span>
+      <h1 className="text-2xl font-bold mb-5 flex gap-2 items-center">
+        Testimonials{" "}
+        <span className="text-emerald-500">
+          <FaHeart className="text-identity w-8" />{" "}
+        </span>
       </h1>
       <Separator className="md:w-1/3 w-full mb-16" />
       <CardStack items={TESTIMONIALS} />
@@ -149,6 +154,82 @@ export const TESTIMONIALS = [
         shared his knowledge to strengthen our foundations and improve our
         careers as <Highlight>software engineers</Highlight>. I had an amazing
         time working with him.
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    name: "Nailan Barbosa",
+    designation: "https://www.linkedin.com/in/nailanbarbosa/",
+    company: "Fuersa Studio",
+    role: "Developer Lead",
+    content: (
+      <div>
+        <Avatar
+          items={[
+            {
+              id: 3,
+              name: "Nailan Barbosa",
+              designation: "Fuerza Studio",
+              icon: (
+                <Image
+                  src="/testimonials/nailan.jpeg"
+                  alt="Nailan Barbosa"
+                  width={100}
+                  height={100}
+                  className="rounded-full border-2 border-identity m-3"
+                />
+              ),
+            },
+          ]}
+          className="float-start m-3"
+        />
+        The best tech lead I've ever had, always concerned with the quality of
+        the product and knowledgeable about the entire scope. Whenever I had a
+        question, it was at the fingertips of this{" "}
+        <Highlight>human-form ChatGPT</Highlight>! He masters the tools he uses
+        and values <Highlight>clean and tested code</Highlight> like no one
+        else.
+      </div>
+    ),
+  },
+  {
+    id: 4,
+    name: "Bruno Pinto",
+    designation: "https://www.linkedin.com/in/brunopop/",
+    company: "Fuerza Studio",
+    role: "Project Manager",
+    content: (
+      <div>
+        <Avatar
+          items={[
+            {
+              id: 4,
+              name: "Bruno Pinto",
+              designation: "Fuerza Studio",
+              icon: (
+                <Image
+                  src="/testimonials/bruno.jpeg"
+                  alt="Burno Pinto"
+                  width={100}
+                  height={100}
+                  className="rounded-full border-2 border-identity m-3"
+                />
+              ),
+            },
+          ]}
+          className="float-start m-3"
+        />
+        I had the great opportunity to work with Erick while he was the Tech
+        Lead of the team I managed. The project we tackled together was highly
+        complex, involving a leading North American client in the{" "}
+        <Highlight>AI sector</Highlight>. Erick's technical acumen is truly
+        exceptional—whether it’s a development query or a strategic issue, he’s
+        always equipped with the right answers. His expertise in{" "}
+        <Highlight>people management</Highlight> is equally impressive, ensuring
+        smooth project progression and timely alignment with stakeholders.
+        Erick's proactive approach in identifying and addressing project issues
+        has been instrumental in our project's success.
       </div>
     ),
   },

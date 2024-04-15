@@ -30,16 +30,16 @@ export default function Hero() {
       {/* First element */}
       <div className="mt-20 pl-12">
         <Spotlight className="-top-8 -left-3" fill="#C2BEBE" />
-        <p className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em]">
+        <div className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em]">
           <span className="after:content-['_↗'] mr-3"></span>
           my name is
-        </p>
+        </div>
         <TypewriterEffect words={logoWords} />
-        <p className="font-inter mt-4 text-base max-w-lg text-left text-gray-500 dark:text-gray-400 ">
+        <div className="font-inter mt-4 text-base max-w-lg text-left text-gray-500 dark:text-gray-400 ">
           Seasoned developer with 10+ years' experience, specializing in React,
           across startups and major corporations, delivering innovative and
           efficient software solutions.
-        </p>
+        </div>
         {/* Social Network Items */}
         <div className="mt-10 flex gap-4">
           <HoverCard>
@@ -59,10 +59,10 @@ export default function Hero() {
                 >
                   LinkedIn
                 </Link>
-                <p>
+                <div>
                   Let's connect! Find me on LinkedIn to explore professional
                   opportunities and collaborations.
-                </p>
+                </div>
                 <p>
                   <Link
                     href="https://www.linkedin.com/in/erickpeixoto/"
@@ -100,7 +100,7 @@ export default function Hero() {
             </HoverCardTrigger>
             <HoverCardContent>
               <div className="p-4 flex gap-4 flex-col">
-                <p className="font-bold text-blue-400">Resume</p>
+                <div className="font-bold text-blue-400">Resume</div>
                 <p>Find my resume here. It's a PDF file.</p>
                 <Link
                   href="https://www.linkedin.com/in/erickpeixoto/"
@@ -134,9 +134,14 @@ export default function Hero() {
             initial={{ rotate: 0 }}
             animate={{ rotate: 10 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[370px] rotate-0 "
+            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[350px] rotate-0 "
           >
-            <Image src="/profile.jpeg" alt="Hero" width={300} height={380} />
+            <Image
+              src="/hero/IMG_1522.JPG"
+              alt="Hero"
+              width={300}
+              height={380}
+            />
           </motion.div>
         </motion.div>
       </div>
