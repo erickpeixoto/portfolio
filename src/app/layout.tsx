@@ -14,11 +14,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jaka",
 });
+const title = "Erick Peixoto - Senior Full Stack Developer Portfolio";
+const description =
+  "Explore the comprehensive portfolio of Erick Peixoto, a Senior Full Stack Developer specializing in React.js and Node.js. Discover innovative projects and technical solutions that highlight expertise in modern web development and leadership in technology.";
 
 export const metadata: Metadata = {
-  title: "Erick Peixoto - Senior Full Stack Developer Portfolio",
-  description:
-    "Explore the comprehensive portfolio of Erick Peixoto, a Senior Full Stack Developer specializing in React.js and Node.js. Discover innovative projects and technical solutions that highlight expertise in modern web development and leadership in technology.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url: "/thumbnail.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
