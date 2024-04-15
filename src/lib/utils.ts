@@ -40,7 +40,6 @@ export function constructMetadata({
     },
     icons,
     metadataBase: new URL("https://erick.peixoto.tech"),
-    themeColor: "#FFF",
     ...(noIndex && {
       robots: {
         index: false,
