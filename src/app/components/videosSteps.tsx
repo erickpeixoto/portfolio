@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Stepper } from "@mantine/core";
 import { motion } from "framer-motion";
 import Video from "next-video";
+import Image from "next/image";
 
 import { Separator } from "@/app/components/ui/separator";
 import firstVideo from "@/videos/introduction.mov";
@@ -18,6 +19,7 @@ export function VideoSteps() {
       description:
         "Discover the milestones of my decade-long journey in software development, leading diverse teams and innovating with cutting-edge technologies",
       videoSrc: firstVideo,
+      placeholder: "/video-placeholder.png",
     },
     {
       label: "Signature Projects",
@@ -47,7 +49,7 @@ export function VideoSteps() {
 
   return (
     <div className="md:flex flex-row gap-3 justify-between p-5">
-      <div className="w-full md:h-screen flex flex-col md:mb-0 mb-12">
+      <div className="w-full md:h-screen flex flex-col md:mb-0 mb-3">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -60,6 +62,7 @@ export function VideoSteps() {
               src={steps[active].videoSrc ?? ""}
               controls
               accentColor="#7E74F1"
+              poster={steps[active].placeholder}
             />
           ) : (
             <div className="text-center text-lg h-[450px] place-content-center">
@@ -68,6 +71,25 @@ export function VideoSteps() {
           )}
         </motion.div>
         <Separator className="mt-10" />
+        <div className="mt-4 p-4">
+          <Stepper
+            active={active + 1}
+            onStepClick={setActive}
+            orientation="vertical"
+            color="violet"
+          >
+            {steps.map((step, index) => (
+              <Stepper.Step
+                key={index}
+                label={step.label}
+                description={step.description}
+                style={{ height: 100 }}
+              />
+            ))}
+          </Stepper>
+        </div>
+      </div>
+      <div className="md:w-2/3 w-full h-screen flex place-content-center pl-4">
         <div className="text-lg my-4">
           <h2 className="font-bold text-xl mb-2">Segment Insight</h2>
           <div className="text-base">
@@ -79,50 +101,34 @@ export function VideoSteps() {
             the technical aspects or the stories behind the projects, there's
             something here for everyone.
           </div>
-        </div>
-        <div className="mt-8">
-          <h3 className="font-bold text-lg mb-2">Join the Conversation</h3>
-          <div className="text-base">
-            I'm keen to hear your thoughts, questions, or feedback. Sharing
-            ideas can spark meaningful discussions and lead to collaborative
-            opportunities. Don't hesitate to reach out {":)"}
-          </div>
 
-          <div className="mt-4">
-            <Link
-              href="mailto:erickepeixoto@gmail.com"
-              className="inline-block bg-identity text-white font-bold py-2 px-4 rounded hover:bg-identity/65 transition-colors duration-300"
-            >
-              Send an Email
-            </Link>
+          <div className="mt-8">
+            <h3 className="font-bold text-lg mb-2">Join the Conversation</h3>
+            <div className="text-base">
+              I'm keen to hear your thoughts, questions, or feedback. Sharing
+              ideas can spark meaningful discussions and lead to collaborative
+              opportunities. Don't hesitate to reach out {":)"}
+            </div>
 
-            <Link
-              href="https://www.linkedin.com/in/erickpeixoto"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-            >
-              Connect on LinkedIn
-            </Link>
+            <div className="mt-4">
+              <Link
+                href="mailto:erickepeixoto@gmail.com"
+                className="inline-block bg-identity text-white font-bold py-2 px-4 rounded hover:bg-identity/65 transition-colors duration-300"
+              >
+                Send an Email
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com/in/erickpeixoto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-4 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
+              >
+                Connect on LinkedIn
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="w-2/3 h-screen flex place-content-center pl-4">
-        <Stepper
-          active={active + 1}
-          onStepClick={setActive}
-          orientation="vertical"
-          color="violet"
-        >
-          {steps.map((step, index) => (
-            <Stepper.Step
-              key={index}
-              label={step.label}
-              description={step.description}
-              style={{ height: 100 }}
-            />
-          ))}
-        </Stepper>
       </div>
     </div>
   );
