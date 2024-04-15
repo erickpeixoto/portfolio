@@ -24,12 +24,12 @@ export function constructMetadata({
     description,
     openGraph: {
       title,
-      url: "https://erick.peixoto.tech",
+      url: "https://erickpeixoto.tech",
       siteName: "Erick Peixoto - Senior Full Stack Developer Portfolio",
       description,
       images: [
         {
-          url: "https://erick.peixoto.tech/thumbnail.png",
+          url: "https://erickpeixoto.tech/thumbnail.png",
           width: 800,
           height: 600,
           alt: "Erick Peixoto - Senior Full Stack Developer Portfolio",
@@ -44,7 +44,7 @@ export function constructMetadata({
       creator: "@erickpeixoto",
     },
     icons,
-    metadataBase: new URL("https://erick.peixoto.tech"),
+    metadataBase: new URL("https://erickpeixoto.tech"),
     ...(noIndex && {
       robots: {
         index: false,
