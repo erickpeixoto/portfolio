@@ -161,7 +161,7 @@ export const TESTIMONIALS = [
     id: 3,
     name: "Nailan Barbosa",
     designation: "https://www.linkedin.com/in/nailanbarbosa/",
-    company: "Fuersa Studio",
+    company: "Fuerza Studio",
     role: "Developer Lead",
     content: (
       <div>
@@ -228,8 +228,8 @@ export const TESTIMONIALS = [
         always equipped with the right answers. His expertise in{" "}
         <Highlight>people management</Highlight> is equally impressive, ensuring
         smooth project progression and timely alignment with stakeholders.
-        Erick's proactive approach in identifying and addressing project issues
-        has been instrumental in our project's success.
+        Erick's proactive approach to identifying and addressing project issues
+        had been instrumental in our project's success.
       </div>
     ),
   },
