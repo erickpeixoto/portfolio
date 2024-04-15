@@ -118,7 +118,7 @@ export default function Hero() {
       <div className="grid place-content-center mt-11 md:mt-0">
         <motion.div
           initial={{ width: 0, height: 0, rotate: 0 }}
-          animate={{ width: 300, height: 360, rotate: -10 }}
+          animate={{ width: 300, height: 400, rotate: -10 }}
           transition={{
             duration: 0.5,
             rotate: {
@@ -134,13 +134,13 @@ export default function Hero() {
             initial={{ rotate: 0 }}
             animate={{ rotate: 10 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[340px] rotate-0 "
+            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[395px] rotate-0 "
           >
             <Image
-              src="/hero/IMG_1522.JPG"
+              src="/hero/profle2.png"
               alt="Hero"
               width={300}
-              height={380}
+              height={400}
             />
           </motion.div>
         </motion.div>
