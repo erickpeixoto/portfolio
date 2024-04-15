@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function constructMetadata({
   title = "Erick Peixoto - Senior Full Stack Developer Portfolio",
   description = "Explore the comprehensive portfolio of Erick Peixoto, a Senior Full Stack Developer specializing in React.js and Node.js. Discover innovative projects and technical solutions that highlight expertise in modern web development and leadership in technology.",
-  image = "/thumbnail.png",
+  image = "thumbnail.png",
   icons = "/favicon.ico",
   noIndex = false,
 }: {
