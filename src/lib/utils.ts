@@ -24,6 +24,8 @@ export function constructMetadata({
     description,
     openGraph: {
       title,
+      url: "https://erick.peixoto.tech",
+      siteName: "Erick Peixoto - Senior Full Stack Developer Portfolio",
       description,
       images: [
         {
