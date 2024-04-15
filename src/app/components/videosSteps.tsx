@@ -49,7 +49,7 @@ export function VideoSteps() {
 
   return (
     <div className="md:flex flex-row gap-3 justify-between p-5">
-      <div className="w-full md:h-screen flex flex-col md:mb-0 mb-3">
+      <div className="w-full md:h-400px flex flex-col md:mb-0 mb-3">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -65,7 +65,7 @@ export function VideoSteps() {
               poster={steps[active].placeholder}
             />
           ) : (
-            <div className="text-center text-lg h-[450px] place-content-center">
+            <div className="text-center text-lg md:h-[400px] h-[200px]  place-content-center">
               <div>Video coming soon...</div>
             </div>
           )}
