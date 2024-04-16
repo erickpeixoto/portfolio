@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Stepper } from "@mantine/core";
 import { motion } from "framer-motion";
 import Video from "next-video";
-import Image from "next/image";
 
 import { Separator } from "@/app/components/ui/separator";
 import firstVideo from "@/videos/introduction.mov";

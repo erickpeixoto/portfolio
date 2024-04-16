@@ -4,15 +4,17 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+export interface Content {
+  title: string;
+  description: string;
+  content?: React.ReactNode;
+}
+
 export const StickyScroll = ({
   content,
   contentClassName,
 }: {
-  content: {
-    title: string;
-    description: string;
-    content?: React.ReactNode;
-  }[];
+  content: Content[];
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);

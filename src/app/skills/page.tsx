@@ -18,7 +18,7 @@ export default function PSkills() {
   return (
     <>
       <Breadcrumb {...breadcrumbs} />
-      <Skills />;
+      <Skills />
     </>
   );
 }

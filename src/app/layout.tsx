@@ -29,9 +29,15 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </head>
-      <ColorSchemeScript />
-      <body className={cn(inter.className, plusJakartaSans.variable)}>
-        <main className="m-[30px] md:m-[40px] min-h-screen flex items-center justify-between space-y-8 bg-white dark:bg-black xl:block max-w-screen-2xl mx-auto md:border dark:border-identity overflow-x-hidden">
+      <body
+        className={cn(
+          inter.className,
+          plusJakartaSans.variable,
+          "flex place-content-center",
+        )}
+      >
+        <ColorSchemeScript />
+        <main className="m-[30px] md:m-[40px] min-h-screen flex justify-between space-y-8 bg-white dark:bg-black max-w-screen-2xl mx-auto md:border dark:border-identity overflow-x-hidden">
           <Providers>
             <NavBar />
             {children}

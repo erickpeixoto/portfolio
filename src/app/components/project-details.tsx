@@ -9,9 +9,9 @@ export default async function ProjectDetails({ id }: { id: string }) {
   const data = await getProject(id);
 
   return (
-    <div className="px-5">
-      <div className="md:flex  h-full gap-4 p-4 ">
-        <div className="md:w-1/3 p-4 rounded-lg flex flex-col justify-between">
+    <div className="md:p-8">
+      <div className="md:flex  h-full gap-4 md:p-4 ">
+        <div className="md:w-1/3 p-4 flex flex-col justify-between">
           <div className="md:flex flex-col justify-between flex-1">
             <div className="hidden md:block">
               <h2 className="text-2xl font-bold mb-4">Company Information</h2>
@@ -43,11 +43,11 @@ export default async function ProjectDetails({ id }: { id: string }) {
             </div>
           </div>
         </div>
-        <div className="md:w-2/3 p-4 rounded-lg flex flex-col">
+        <div className="md:w-2/3 w-full md:p-8 flex flex-col">
           <ProjectCarousel {...data} />
         </div>
       </div>
-      <div className="flex gap-1 flex-col flex-1">
+      <div className="flex gap-2 flex-col flex-1 mt-10 p-5 md:p-0">
         <div>
           <strong>Product:</strong> {data.title}
         </div>
