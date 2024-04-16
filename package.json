@@ -103,5 +103,8 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "resolutions": {
+    "esbuild": "0.18.20"
   }
 }
