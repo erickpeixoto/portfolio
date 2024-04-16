@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MenuItem } from "./menu-items";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../../themeToggle";
+import { MenuToggle } from "./menu-toogle";
 
 const variants = {
   open: {
@@ -23,7 +24,7 @@ export const Navigation = ({
   <motion.ul
     variants={variants}
     className={cn(
-      "flex flex-col w-full justify-center items-center p-8 pl-16 bg-white z-40 dark:bg-primary text-black dark:text-white absolute ",
+      "flex flex-col w-full justify-center items-center p-8 pl-16 bg-white z-40 dark:bg-primary text-black dark:text-white absolute left-0 top-7 ",
       isOpen ? "block" : "hidden",
     )}
     initial={false}
@@ -33,10 +34,12 @@ export const Navigation = ({
     {itemIds.map((i) => (
       <MenuItem index={i} key={i} toogle={toogle} />
     ))}
-    <li className="flex gap-2 items-center">
-      Change Theme
-      <ThemeToggle />
-    </li>
+    <div className="absolute right-0 top-9 flex flex-col items-center">
+      <MenuToggle toggle={toogle} isOpen={isOpen} />
+      <div className="mr-6">
+        <ThemeToggle />
+      </div>
+    </div>
   </motion.ul>
 );
 

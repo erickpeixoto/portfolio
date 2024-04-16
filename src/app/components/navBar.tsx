@@ -2,7 +2,7 @@ import { Logo } from "@/app/components/logo";
 import { LookAtMe } from "@/app/components/lookAtMe";
 import { Menu } from "@/app/components/menu";
 import { ThemeToggle } from "@/app/components/themeToggle";
-import Resume from "@/app/components/buttonResume";
+import { Schedule } from "@/app/components/buttonSchedule";
 import { MenuMobile } from "@/app/components/menu/mobile";
 
 export const NavBar = () => {
@@ -13,7 +13,7 @@ export const NavBar = () => {
         <LookAtMe />
         <Menu />
         <ThemeToggle />
-        <Resume />
+        <Schedule />
       </nav>
       <MenuMobile />
     </>
