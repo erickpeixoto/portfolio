@@ -1,6 +1,6 @@
 "server only";
 
-import { Project } from "@/server/mock/project.types";
+import { Project } from "@/server/mock/projects/project.types";
 
 export const projects: Project[] = [
   {
