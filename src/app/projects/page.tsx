@@ -1,6 +1,6 @@
 import { HoverEffect } from "@/app/components/card-hover-effect";
 import { ScrollShadow } from "@nextui-org/react";
-import { loadProjects } from "@/server/mock/projects";
+import { loadProjects } from "@/server/mock/projects/items-projects";
 import LoadMore from "@/app/components/fetchMore";
 import { Timeline } from "@/app/components/timeline";
 import {
