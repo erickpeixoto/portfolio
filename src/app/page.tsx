@@ -5,6 +5,7 @@ import Footer from "@/app/components/footer";
 export default async function HomePage() {
   return (
     <>
+      <Hero />
       <Skills />
       <Footer />
     </>
