@@ -3,6 +3,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { SiLinkedin } from "react-icons/si";
+import { FaPause, FaPlay } from "react-icons/fa";
 
 type Card = {
   id: number;
@@ -27,7 +28,7 @@ export const CardStack = ({
   flipInterval = 5000,
 }: CardStackProps) => {
   const [cards, setCards] = useState<Card[]>(items);
-  const [hovering, setHovering] = useState(false);
+  const [interactionState, setInteractionState] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout>();
 
   const startFlipping = useCallback(() => {
@@ -48,17 +49,46 @@ export const CardStack = ({
   }, []);
 
   useEffect(() => {
-    if (!hovering) {
+    if (!interactionState) {
       startFlipping();
     } else {
       stopFlipping();
     }
 
     return () => stopFlipping();
-  }, [hovering, startFlipping, stopFlipping]);
+  }, [interactionState, startFlipping, stopFlipping]);
 
+  const handleInteractionStart = () => {
+    setInteractionState(true);
+  };
+
+  const handleInteractionEnd = () => {
+    setInteractionState(false);
+  };
   return (
     <div className="relative md:h-96 h-[500px] w-full">
+      <button
+        onClick={() => setInteractionState((prev) => !prev)}
+        className="md:hidden absolute z-50 bottom-5 right-5 p-3 rounded-full shadow-lg 
+        bg-white dark:bg-black border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05]"
+      >
+        {interactionState ? (
+          <FaPlay
+            className="
+          text-identity
+         text-2xl
+        "
+          />
+        ) : (
+          <FaPause
+            className="
+          text-identity
+          text-2xl
+        "
+          />
+        )}
+      </button>
+
       {cards.map((card, index) => (
         <motion.div
           key={card.id}
@@ -69,8 +99,10 @@ export const CardStack = ({
             scale: 1 - index * scaleFactor,
             zIndex: cards.length - index,
           }}
-          onHoverStart={() => setHovering(true)}
-          onHoverEnd={() => setHovering(false)}
+          onHoverStart={handleInteractionStart}
+          onHoverEnd={handleInteractionEnd}
+          onTouchStart={handleInteractionStart}
+          onTouchEnd={handleInteractionEnd}
           role="presentation"
         >
           <div className="font-normal text-neutral-700 dark:text-neutral-200">
