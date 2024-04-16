@@ -5,7 +5,7 @@ import Footer from "@/app/components/footer";
 export default async function TypewriterEffectDemo() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <Skills />
       <Footer />
     </>
