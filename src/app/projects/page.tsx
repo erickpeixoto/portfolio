@@ -19,7 +19,7 @@ const breadcrumbs: BreadcrumbProps = {
 };
 
 export default async function Projects() {
-  const projects = await loadProjects(1, 2);
+  const projects = await loadProjects(1, 4);
 
   return (
     <>

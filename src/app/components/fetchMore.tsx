@@ -16,7 +16,7 @@ export default function LoadMore() {
   useEffect(() => {
     setIsLoading(true);
     if (inView) {
-      loadProjects(page, 2).then((data) => {
+      loadProjects(page, 4).then((data) => {
         setProjects([...projects, ...data]);
         setPage(page + 1);
       });
