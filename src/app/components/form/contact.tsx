@@ -46,8 +46,8 @@ export default function ContactForm() {
         </div>
         <div className="mb-4 flex items-center">
           <MdEmail className="text-lg mr-2" />
-          <a href="mailto:erick@erickepeixoto.com" className="hover:underline">
-            erick@erickepeixoto.com
+          <a href="mailto:erickepeixoto@gmail.com" className="hover:underline">
+            erickepeixoto@gmail.com
           </a>
         </div>
         <div className="mb-4 flex items-center">
