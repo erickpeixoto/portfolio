@@ -26,9 +26,8 @@ export default function Hero() {
   ];
 
   return (
-    <div className="md:grid grid-flow-col justify-stretch w-full p-5 gap-5 md:mt-20">
-      {/* First element */}
-      <div className="mt-20 pl-12">
+    <div className="md:flex justify-between">
+      <div className="w-full mt-32 md:pl-20 pl-12">
         <Spotlight className="-top-8 -left-3" fill="#C2BEBE" />
         <div className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em]">
           <span className="after:content-['_↗'] mr-3"></span>
@@ -114,8 +113,8 @@ export default function Hero() {
           </HoverCard>
         </div>
       </div>
-      {/* Second Element */}
-      <div className="grid place-content-center mt-11 md:mt-0">
+
+      <div className="flex mt-16 w-full place-content-center">
         <motion.div
           initial={{ width: 0, height: 0, rotate: 0 }}
           animate={{ width: 300, height: 400, rotate: -10 }}
