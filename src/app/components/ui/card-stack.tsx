@@ -69,7 +69,7 @@ export const CardStack = ({
     <div className="relative md:h-96 h-[500px] w-full">
       <button
         onClick={() => setInteractionState((prev) => !prev)}
-        className="md:hidden absolute z-50 bottom-5 right-5 p-3 rounded-full shadow-lg 
+        className="md:hidden block absolute z-50 bottom-5 right-5 p-3 rounded-full shadow-lg 
         bg-white dark:bg-black border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05]"
       >
         {interactionState ? (
