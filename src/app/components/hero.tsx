@@ -42,13 +42,24 @@ export default function Hero() {
         {/* Social Network Items */}
         <div className="mt-10 flex gap-4">
           <HoverCard>
-            <HoverCardTrigger>
+            <HoverCardTrigger className="hidden md:block">
               <Linkedin
                 className="dark:text-gray-300 text-gray-500 hover:text-identity 
                 transitoion duration-300 ease-in-out cursor-pointer
                 "
               />
             </HoverCardTrigger>
+            <Link
+              href="https://www.linkedin.com/in/erickpeixoto/"
+              className="text-blue-400 md:hidden block"
+              target="_blank"
+            >
+              <Linkedin
+                className="dark:text-gray-300 text-gray-500 hover:text-identity 
+                transitoion duration-300 ease-in-out cursor-pointer
+                "
+              />
+            </Link>
             <HoverCardContent>
               <div className="p-4 flex gap-3 flex-col">
                 <Link
@@ -90,19 +101,34 @@ export default function Hero() {
           </Link>
 
           <HoverCard>
-            <HoverCardTrigger>
+            <HoverCardTrigger className="hidden md:block">
               <FileText
                 className="dark:text-gray-300 text-gray-500 hover:text-identity
                         transitoion duration-300 ease-in-out cursor-pointer
                         "
               />
             </HoverCardTrigger>
+            <Link
+              href={
+                "https://utfs.io/f/55cd37bf-204d-4e6a-bdc2-cc43e450b1f4-e1qxd7.pdf"
+              }
+              className="text-blue-400 md:hidden block"
+              target="_blank"
+            >
+              <FileText
+                className="dark:text-gray-300 text-gray-500 hover:text-identity
+                        transitoion duration-300 ease-in-out cursor-pointer
+                        "
+              />
+            </Link>
             <HoverCardContent>
               <div className="p-4 flex gap-4 flex-col">
                 <div className="font-bold text-blue-400">Resume</div>
                 <p>Find my resume here. It's a PDF file.</p>
                 <Link
-                  href="https://www.linkedin.com/in/erickpeixoto/"
+                  href={
+                    "https://utfs.io/f/55cd37bf-204d-4e6a-bdc2-cc43e450b1f4-e1qxd7.pdf"
+                  }
                   className="text-blue-400"
                   target="_blank"
                 >
