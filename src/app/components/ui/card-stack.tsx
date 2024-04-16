@@ -101,8 +101,6 @@ export const CardStack = ({
           }}
           onHoverStart={handleInteractionStart}
           onHoverEnd={handleInteractionEnd}
-          onTouchStart={handleInteractionStart}
-          onTouchEnd={handleInteractionEnd}
           role="presentation"
         >
           <div className="font-normal text-neutral-700 dark:text-neutral-200">
