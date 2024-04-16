@@ -212,4 +212,42 @@ export const TESTIMONIALS = [
       </div>
     ),
   },
+  {
+    id: 5,
+    name: "Kayo Tusthler",
+    designation:
+      "https://www.linkedin.com/in/kayo-almondes-tusthler-98154b187/",
+    company: "Fuerza Studio",
+    role: "Frontend Developer",
+    content: (
+      <div>
+        <Avatar
+          items={[
+            {
+              id: 5,
+              name: "Kayo Tusthler",
+              designation: "Frontend Developer at Fuerza Studio",
+              icon: (
+                <Image
+                  src="/testimonials/kayo.jpeg"
+                  alt="Kayo Tusthler"
+                  width={100}
+                  height={100}
+                  className="rounded-full border-2 border-identity m-3"
+                />
+              ),
+            },
+          ]}
+          className="float-start m-3"
+        />
+        Working with Erick was a{" "}
+        <Highlight>game-changer in my career</Highlight>, always motivating the
+        team and ready to help whenever possible, plus he has excellent{" "}
+        didactics in knowledge transfer, always{" "}
+        <Highlight>patient and calm</Highlight>. With him, I truly understood
+        some concepts that I thought I had grasped before. He is an excellent{" "}
+        <Highlight>professional and team leader</Highlight>.
+      </div>
+    ),
+  },
 ];
