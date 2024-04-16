@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Project } from "@/server/mock/project.types";
+import { Project } from "@/server/mock/projects/project.types";
 import { AnimatePresence, motion } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import Link from "next/link";

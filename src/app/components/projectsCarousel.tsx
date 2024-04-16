@@ -1,4 +1,4 @@
-import { Project } from "@/server/mock/project.types";
+import { Project } from "@/server/mock/projects/project.types";
 import {
   Carousel,
   CarouselContent,

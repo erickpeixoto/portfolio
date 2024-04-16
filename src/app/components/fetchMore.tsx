@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { loadProjects } from "@/server/mock/projects";
+import { loadProjects } from "@/server/mock/projects/items-projects";
 import { HoverEffect } from "@/app/components/card-hover-effect";
 import Image from "next/image";
-import { Project } from "@/server/mock/project.types";
+import { Project } from "@/server/mock/projects/project.types";
 
 export default function LoadMore() {
   const [projects, setProjects] = useState<Project[]>([]);
