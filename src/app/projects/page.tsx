@@ -1,12 +1,10 @@
-import { HoverEffect } from "@/app/components/card-hover-effect";
-import { ScrollShadow } from "@nextui-org/react";
 import { loadProjects } from "@/server/mock/projects/items-projects";
-import LoadMore from "@/app/components/fetchMore";
 import { Timeline } from "@/app/components/timeline";
 import {
   BreadcrumbDynamic,
   BreadcrumbProps,
 } from "@/app/components/breadcrumbDynamic";
+import { ProjectList } from "../components/project-list";
 
 const breadcrumbs: BreadcrumbProps = {
   items: [
@@ -19,7 +17,7 @@ const breadcrumbs: BreadcrumbProps = {
 };
 
 export default async function Projects() {
-  const projects = await loadProjects(1, 4);
+  const projects = await loadProjects(1, 2);
 
   return (
     <>
@@ -29,15 +27,7 @@ export default async function Projects() {
           <Timeline />
         </div>
         <div className="h-40 w-full">
-          <ScrollShadow
-            hideScrollBar
-            className="w-full h-[800px] 
-          dark:bg-black bg-white dark:shadow-none shadow-md rounded-lg p-5
-           "
-          >
-            <HoverEffect items={projects ?? []} />
-            <LoadMore />
-          </ScrollShadow>
+          <ProjectList projects={projects} />
         </div>
       </div>
     </>

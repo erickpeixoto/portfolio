@@ -41,14 +41,14 @@ export const AnimatedTooltip = ({ items, className }: TooltipProps) => {
 
   return (
     <>
-      {items.map((item, idx) => (
-        <div
-          className={cn("relative group", className)}
-          key={item.name}
-          onMouseEnter={() => setHoveredIndex(item.id)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
+        {items.map((item, idx) => (
+          <div
+            className={cn("relative group", className)}
+            key={item.name}
+            onMouseEnter={() => setHoveredIndex(item.id)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
             {hoveredIndex === item.id && (
               <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
@@ -78,12 +78,12 @@ export const AnimatedTooltip = ({ items, className }: TooltipProps) => {
                 <div className="text-white text-xs">{item.designation}</div>
               </motion.div>
             )}
-          </AnimatePresence>
-          <div className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white dark:border-black relative transition duration-500 grid place-items-center">
-            {item.icon}
+            <div className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white dark:border-black relative transition duration-500 grid place-items-center">
+              {item.icon}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </AnimatePresence>
     </>
   );
 };

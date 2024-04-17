@@ -29,28 +29,28 @@ export const HoverEffect = ({
         className,
       )}
     >
-      {items.map((item, idx) => (
-        <motion.div
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          transition={{
-            delay: idx * stagger,
-            ease: "easeInOut",
-            duration: 0.1,
-          }}
-          viewport={{ amount: 0 }}
-          className="rounded relative w-full"
-          key={idx}
-        >
-          <Link
-            href={`/projects/${item.id}`}
-            key={item?.id}
-            className="relative group  block p-2 h-full w-full"
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
+      <AnimatePresence>
+        {items.map((item, idx) => (
+          <motion.div
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              delay: idx * stagger,
+              ease: "easeInOut",
+              duration: 0.1,
+            }}
+            viewport={{ amount: 0 }}
+            className="rounded relative w-full"
+            key={idx}
           >
-            <AnimatePresence>
+            <Link
+              href={`/projects/${item.id}`}
+              key={item?.id}
+              className="relative group  block p-2 h-full w-full"
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
               {hoveredIndex === idx && (
                 <motion.span
                   className="absolute inset-0 h-full w-full bg-identity/35 dark:bg-slate-800/[0.8] block  rounded-3xl"
@@ -66,11 +66,11 @@ export const HoverEffect = ({
                   }}
                 />
               )}
-            </AnimatePresence>
-            <Card project={item} />
-          </Link>
-        </motion.div>
-      ))}
+              <Card project={item} />
+            </Link>
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
