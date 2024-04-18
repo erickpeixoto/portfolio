@@ -27,9 +27,9 @@ export function handleTags(tags: string[]) {
   ));
 }
 export function constructMetadata({
-  title = "Erick Peixoto - Senior Full Stack Developer Portfolio",
-  description = "Explore the comprehensive portfolio of Erick Peixoto, a Senior Full Stack Developer specializing in React.js and Node.js. Discover innovative projects and technical solutions that highlight expertise in modern web development and leadership in technology.",
-  image = "thumbnail.png",
+  title,
+  description,
+  image,
   icons = "/favicon.ico",
   noIndex = false,
 }: {
@@ -45,14 +45,14 @@ export function constructMetadata({
     openGraph: {
       title,
       url: "https://erickpeixoto.tech",
-      siteName: "Erick Peixoto - Senior Full Stack Developer Portfolio",
+      siteName: title,
       description,
       images: [
         {
-          url: "https://erickpeixoto.tech/thumbnail.png",
+          url: `https://erickpeixoto.tech/${image}`,
           width: 800,
           height: 600,
-          alt: "Erick Peixoto - Senior Full Stack Developer Portfolio",
+          alt: title,
         },
       ],
     },
@@ -60,7 +60,7 @@ export function constructMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [image!],
       creator: "@erickpeixoto",
     },
     icons,

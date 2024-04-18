@@ -1,9 +1,9 @@
 "server only";
 
 import { Client } from "@notionhq/client";
-import { NotionDatabaseResponse } from "@/types/notion";
 import { NotionToMarkdown } from "notion-to-md";
 import { cache } from "react";
+import { NotionDatabaseResponse } from "@/lib/types/notion";
 
 export const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const DATABASE_ID = process.env.NOTION_BLOG_DB_ID!;
@@ -26,7 +26,6 @@ export async function getPosts() {
     const typedResponse = response as unknown as NotionDatabaseResponse;
 
     return typedResponse.results.map((post) => {
-      console.log(post.properties);
       const title =
         post.properties.title && post.properties.title.title.length > 0
           ? post.properties.title.title[0].plain_text
@@ -99,6 +98,7 @@ export async function getPost(slug: string) {
       content: mdString,
       createdAt: createdAt,
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
+      image: post.properties.image,
     };
   } catch (error) {
     console.error("Error fetching post details:", error);

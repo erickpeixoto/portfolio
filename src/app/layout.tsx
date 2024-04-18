@@ -14,7 +14,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jaka",
 });
-const metadata = constructMetadata();
+const metadata = constructMetadata({
+  title: "Erick Peixoto",
+  description:
+    "Explore the comprehensive portfolio of Erick Peixoto, a Senior Full Stack Developer specializing in React.js and Node.js. Discover innovative projects and technical solutions that highlight expertise in modern web development and leadership in technology.",
+  image: "thumbnail.png",
+});
 
 export default function RootLayout({
   children,

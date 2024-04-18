@@ -38,11 +38,18 @@ export interface Parent {
   database_id: string;
 }
 
+interface Image {
+  id: string;
+  type: string;
+  files: File[];
+}
+
 export interface Properties {
   tags: Tags;
   slug: Slug;
   title: Title;
   createdAt: NotionDate;
+  image?: Image;
 }
 
 export interface Post {

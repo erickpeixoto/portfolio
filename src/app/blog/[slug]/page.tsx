@@ -10,7 +10,10 @@ import {
   BreadcrumbDynamic as Breadcrumb,
   BreadcrumbProps,
 } from "@/app/components/breadcrumbDynamic";
+import { constructMetadata } from "@/lib/utils";
+import { Metadata } from "next";
 
+let metadata: Metadata;
 const breadcrumbs: BreadcrumbProps = {
   items: [
     {
@@ -31,6 +34,11 @@ export default async function BlogPost({
   params: { slug: string };
 }) {
   const post = await getPost(params.slug);
+
+  metadata = constructMetadata({
+    title: post?.title,
+    image: post?.image?.files[0].name,
+  });
 
   if (!post) {
     notFound();
@@ -59,3 +67,5 @@ export default async function BlogPost({
     </>
   );
 }
+
+export { metadata };
