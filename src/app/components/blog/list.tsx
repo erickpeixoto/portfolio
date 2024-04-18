@@ -1,5 +1,5 @@
 import { Post } from "@/lib/types/notion";
-import { cn, handleTags } from "@/lib/utils";
+import { handleTags } from "@/lib/utils";
 import Link from "next/link";
 import { MdOutlineReadMore } from "react-icons/md";
 
