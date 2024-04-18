@@ -20,7 +20,7 @@ export const MenuMobile = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className="w-full overflow-hidden md:hidden flex justify-between pl-4 md:pl-0"
+      className="w-full overflow-hidden md:hidden flex justify-between pl-4 md:pl-0 md:pt-0 pt-8"
     >
       <Navigation isOpen={isOpen} toogle={toggleOpen} />
       <Logo />

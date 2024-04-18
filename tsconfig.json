@@ -20,7 +20,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/videos/*": ["./videos/*"],
-      "@/emails/*": ["./emails/*"]
+      "@/emails/*": ["./emails/*"],
+      "@/types/*": ["./src/lib/types/*"],
     }
   },
   "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

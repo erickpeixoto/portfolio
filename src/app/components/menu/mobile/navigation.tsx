@@ -1,9 +1,9 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { MenuItem } from "./menu-items";
+import { MenuItem, menus } from "@/app/components/menu/mobile/menu-items";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "../../themeToggle";
-import { MenuToggle } from "./menu-toogle";
+import { ThemeToggle } from "@/app/components/themeToggle";
+import { MenuToggle } from "@/app/components/menu/mobile/menu-toogle";
 
 const variants = {
   open: {
@@ -31,7 +31,7 @@ export const Navigation = ({
     animate={isOpen ? "open" : "closed"}
     layout
   >
-    {itemIds.map((i) => (
+    {menus.map((_, i) => (
       <MenuItem index={i} key={i} toogle={toogle} />
     ))}
     <div className="absolute right-0 top-9 flex flex-col items-center">
@@ -42,5 +42,3 @@ export const Navigation = ({
     </div>
   </motion.ul>
 );
-
-const itemIds = [0, 1, 2, 3];

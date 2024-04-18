@@ -31,11 +31,12 @@ const borderColorClasses = [
   "border-purple-800",
 ];
 
-const menuItems = [
+export const menus = [
   { href: "/", label: "Home" },
   { href: "/look-at-me", label: "Behind the code" },
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Journey" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const colorGradient = [
@@ -43,10 +44,11 @@ const colorGradient = [
   "from-purple-500 to-violet-500",
   "from-indigo-500 to-blue-500",
   "from-green-500 to-teal-500",
+  "from-yellow-500 to-amber-500",
 ];
 
 export const MenuItem = React.memo(({ index, toogle }: MenuItemProps) => {
-  const { href, label } = menuItems[index];
+  const { href, label } = menus[index];
 
   const bgColor = cn(
     "rounded-full w-4 h-4 mr-2",

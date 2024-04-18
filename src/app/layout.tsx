@@ -37,7 +37,7 @@ export default function RootLayout({
         )}
       >
         <ColorSchemeScript />
-        <main className="m-[30px] md:m-[40px] min-h-screen flex justify-between space-y-8 bg-white dark:bg-black max-w-screen-2xl mx-auto md:border dark:border-identity overflow-x-hidden">
+        <main className="w-full h-auto min-h-screen dark:bg-black bg-white m-[30px] md:m-[40px] lg:max-w-screen-2xl">
           <Providers>
             <NavBar />
             {children}
