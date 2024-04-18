@@ -60,7 +60,7 @@ export function constructMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image!],
+      images: ["04-18-2024.jpeg"],
       creator: "@erickpeixoto",
     },
     icons,
