@@ -38,10 +38,18 @@ export interface Parent {
   database_id: string;
 }
 
-interface Image {
+export interface Images {
   id: string;
+  type: "rich_text";
+  rich_text: RichText[];
+}
+
+export interface RichText {
   type: string;
-  files: File[];
+  text: Text;
+  annotations: Annotations;
+  plain_text: string;
+  href: any;
 }
 
 export interface Properties {
@@ -49,7 +57,7 @@ export interface Properties {
   slug: Slug;
   title: Title;
   createdAt: NotionDate;
-  image?: Image;
+  image?: Images;
 }
 
 export interface Post {
@@ -133,8 +141,8 @@ export interface NotionDate {
   id: string;
   type: "date";
   date: {
-    start: string; // ISO string format
-    end: string | null; // ISO string format or null
+    start: string;
+    end: string | null;
   } | null;
 }
 

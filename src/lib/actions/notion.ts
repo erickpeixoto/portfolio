@@ -97,7 +97,7 @@ export async function getPost(slug: string) {
       content: mdString,
       createdAt: createdAt,
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
-      image: post.properties.image,
+      image: post.properties.image?.rich_text[0]?.plain_text || "",
     };
   } catch (error) {
     console.error("Error fetching post details:", error);
