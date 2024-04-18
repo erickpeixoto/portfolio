@@ -48,14 +48,14 @@ export function constructMetadata({
   const imageUrl =
     imageSource === "unsplash"
       ? image // Directly use the image URL for Unsplash
-      : `https://erickpeixoto.tech/${image}`; // Prefix domain for local images
+      : `https://images.unsplash.com/${image}`; // Prefix domain for local images
 
   return {
     title,
     description,
     openGraph: {
       title,
-      url: "https://erickpeixoto.tech",
+      url: "https://images.unsplash.com",
       siteName: title,
       description,
       images: [
@@ -75,7 +75,7 @@ export function constructMetadata({
       creator: "@erickpeixoto",
     },
     icons,
-    metadataBase: new URL("https://erickpeixoto.tech"),
+    metadataBase: new URL("https://images.unsplash.com"),
     ...(noIndex && {
       robots: {
         index: true,
