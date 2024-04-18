@@ -37,8 +37,8 @@ export default async function BlogPost({
 
   metadata = constructMetadata({
     title: post?.title,
-    description: "Check out this blog post!",
-    image: "thumbnail.png",
+    description: "Check out this blog post! 📚",
+    image: `posts/${post?.image}`,
   });
 
   if (!post) {
