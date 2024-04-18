@@ -67,8 +67,8 @@ export function constructMetadata({
     metadataBase: new URL("https://erickpeixoto.tech"),
     ...(noIndex && {
       robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
       },
     }),
   };
