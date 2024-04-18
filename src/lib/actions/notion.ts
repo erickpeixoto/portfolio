@@ -22,7 +22,6 @@ export async function getPosts() {
     if (!response.results) {
       return [];
     }
-
     const typedResponse = response as unknown as NotionDatabaseResponse;
 
     return typedResponse.results.map((post) => {

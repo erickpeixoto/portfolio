@@ -5,6 +5,7 @@ import { Metadata } from "next";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
 const tagColors = [
   "bg-identity opacity-60",
   "bg-[#A374F1] opacity-60",
@@ -13,12 +14,13 @@ const tagColors = [
   "bg-[#F17C74] opacity-60",
   "bg-[#F17474] opacity-60",
 ];
+
 export function handleTags(tags: string[]) {
   return tags.map((tag, index) => (
     <span
       key={tag}
       className={cn(
-        "text-sm text-white px-2 py-1 rounded-md op hover:opacity-90",
+        "text-sm text-white px-2 py-1 rounded-md hover:opacity-90",
         tagColors[index % tagColors.length],
       )}
     >
@@ -26,29 +28,39 @@ export function handleTags(tags: string[]) {
     </span>
   ));
 }
+
 export function constructMetadata({
   title,
   description,
   image,
+  imageSource = "domain", // "domain" or "unsplash"
   icons = "/favicon.ico",
   noIndex = false,
 }: {
   title?: string;
   description?: string;
   image?: string;
+  imageSource?: string; // Added parameter for image source
   icons?: string;
   noIndex?: boolean;
 } = {}): Metadata {
+  // Determine the base URL for the image
+  const imageUrl =
+    imageSource === "unsplash"
+      ? image // Directly use the image URL for Unsplash
+      : `https://erickpeixoto.tech/${image}`; // Prefix domain for local images
+
   return {
     title,
     description,
     openGraph: {
       title,
+      url: "https://erickpeixoto.tech",
       siteName: title,
       description,
       images: [
         {
-          url: image!,
+          url: imageUrl!,
           width: 800,
           height: 600,
           alt: title,
@@ -59,7 +71,7 @@ export function constructMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image!],
+      images: [imageUrl!],
       creator: "@erickpeixoto",
     },
     icons,
