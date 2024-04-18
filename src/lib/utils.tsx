@@ -44,12 +44,11 @@ export function constructMetadata({
     description,
     openGraph: {
       title,
-      url: "https://erickpeixoto.tech",
       siteName: title,
       description,
       images: [
         {
-          url: `https://erickpeixoto.tech/${image}`,
+          url: image!,
           width: 800,
           height: 600,
           alt: title,
