@@ -39,6 +39,7 @@ export function constructMetadata({
   icons?: string;
   noIndex?: boolean;
 } = {}): Metadata {
+  console.log("constructMetadata", image);
   return {
     title,
     description,
