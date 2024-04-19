@@ -97,6 +97,7 @@ export async function getPost(slug: string) {
       content: mdString,
       createdAt: createdAt,
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
+      description: post.properties.description?.title[0]?.plain_text || "",
       image: post.properties.image?.rich_text[0]?.plain_text || "",
     };
   } catch (error) {

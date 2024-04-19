@@ -58,6 +58,7 @@ export interface Properties {
   title: Title;
   createdAt: NotionDate;
   image?: Images;
+  description?: Title;
 }
 
 export interface Post {
@@ -67,6 +68,7 @@ export interface Post {
   tags: string[];
   createdAt: string;
   html?: string;
+  description?: string;
 }
 
 export interface Tags {
