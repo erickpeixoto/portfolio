@@ -4,11 +4,12 @@ import { Menu as MenuItems, MenuItem } from "@/app/components/menuItems";
 import { cn } from "@/lib/utils";
 import ContactForm from "@/app/components/form/contact";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 
 export const Menu = ({ className }: { className?: string }) => {
   const [active, setActive] = useState<string | null>(null);
   const pathName = usePathname();
+  const { slug } = useParams();
 
   return (
     <div className={cn("mx-auto z-50", className)}>
@@ -39,6 +40,7 @@ export const Menu = ({ className }: { className?: string }) => {
           className={cn(
             "pt-6 hover:text-identity transition",
             pathName === "/blog" && "text-identity border-b-2 border-identity",
+            slug && "text-identity border-b-2 border-identity",
           )}
           href={"/blog"}
         >

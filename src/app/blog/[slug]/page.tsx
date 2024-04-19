@@ -1,10 +1,10 @@
-import { getPageContent, getPost, notion } from "@/lib/actions/notion";
+import { getPageContent, getPost, getNotionClient } from "@/lib/actions/notion";
 import { notFound } from "next/navigation";
 import { NotionRenderer } from "@notion-render/client";
 
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import { PostDetails } from "@/app/components/blog/post";
+import { PostDetails } from "@/app/components/blog/details";
 import { Post } from "@/lib/types/notion";
 import {
   BreadcrumbDynamic as Breadcrumb,
@@ -47,7 +47,7 @@ export default async function BlogPost({
   }
   const content = await getPageContent(post.id!);
   const notionRenderer = new NotionRenderer({
-    client: notion,
+    client: await getNotionClient(),
   });
 
   notionRenderer.use(hljsPlugin({}));

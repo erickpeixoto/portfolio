@@ -7,6 +7,12 @@ export interface NotionDatabaseResponse {
   page_or_database: PageOrDatabase;
 }
 
+export interface NotionCallResponse {
+  posts: Post[];
+  next_cursor: any;
+  has_more: boolean;
+}
+
 export interface Result {
   object: string;
   id: string;

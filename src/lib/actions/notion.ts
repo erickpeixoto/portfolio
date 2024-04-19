@@ -1,15 +1,25 @@
-"server only";
+"use server";
 
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { cache } from "react";
-import { NotionDatabaseResponse } from "@/lib/types/notion";
+import {
+  NotionCallResponse,
+  NotionDatabaseResponse,
+  Post,
+} from "@/lib/types/notion";
 
-export const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const DATABASE_ID = process.env.NOTION_BLOG_DB_ID!;
+const DATABASE_ID: string = process.env.NEXT_PUBLIC_NOTION_BLOG_DB_ID!;
+const PAGE_SIZE: number = 3;
+export async function getNotionClient(): Promise<Client> {
+  return new Client({ auth: process.env.NEXT_PUBLIC_NOTION_API_KEY });
+}
 
-export async function getPosts() {
+export async function getPosts(
+  startCursor?: string,
+): Promise<NotionCallResponse> {
   try {
+    const notion = await getNotionClient();
     const response = await notion.databases.query({
       filter: {
         property: "status",
@@ -17,14 +27,16 @@ export async function getPosts() {
           equals: "published",
         },
       },
+      start_cursor: startCursor,
+      page_size: PAGE_SIZE,
       database_id: DATABASE_ID,
     });
     if (!response.results) {
-      return [];
+      return { posts: [], next_cursor: null, has_more: false };
     }
     const typedResponse = response as unknown as NotionDatabaseResponse;
 
-    return typedResponse.results.map((post) => {
+    const posts: Post[] = typedResponse.results.map((post) => {
       const title =
         post.properties.title && post.properties.title.title.length > 0
           ? post.properties.title.title[0].plain_text
@@ -58,6 +70,12 @@ export async function getPosts() {
         createdAt,
       };
     });
+
+    return {
+      posts,
+      next_cursor: typedResponse.next_cursor,
+      has_more: typedResponse.has_more,
+    };
   } catch (error) {
     console.error("Error fetching posts:", error);
     throw new Error("Failed to fetch posts from Notion.");
@@ -66,6 +84,7 @@ export async function getPosts() {
 
 export async function getPost(slug: string) {
   try {
+    const notion = await getNotionClient();
     const response = await notion.databases.query({
       database_id: DATABASE_ID,
       filter: {
@@ -111,7 +130,8 @@ export async function getPost(slug: string) {
   }
 }
 
-export const getPageContent = cache((pageId: string) => {
+export const getPageContent = cache(async (pageId: string) => {
+  const notion = await getNotionClient();
   return notion.blocks.children
     .list({ block_id: pageId })
     .then((res) => res.results);

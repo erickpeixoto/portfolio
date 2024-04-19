@@ -7,7 +7,7 @@ import { HoverEffect } from "@/app/components/card-hover-effect";
 import Image from "next/image";
 import { Project } from "@/server/mock/projects/project.types";
 
-export default function LoadMore() {
+export function LoadMore() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(2);

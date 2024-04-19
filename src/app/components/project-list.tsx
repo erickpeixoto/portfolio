@@ -2,7 +2,7 @@
 
 import { ScrollShadow } from "@nextui-org/react";
 import { HoverEffect } from "@/app/components/card-hover-effect";
-import LoadMore from "@/app/components/fetchMore";
+import { LoadMore } from "@/app/components/fetchMore";
 import { Project } from "@/server/mock/projects/project.types";
 
 export function ProjectList({ projects }: { projects: Project[] }) {

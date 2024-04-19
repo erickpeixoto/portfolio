@@ -1,27 +1,36 @@
 import { Post } from "@/lib/types/notion";
 import { handleTags } from "@/lib/utils";
+import Link from "next/link";
+import { MdOutlineReadMore } from "react-icons/md";
 
-interface PostProps {
-  post: Post;
-}
+export function PostItem({ post }: { post: Post }) {
+  const { title, createdAt, tags, slug } = post;
 
-export function PostDetails({ post }: PostProps) {
   return (
-    <div className="mx-auto max-w-4xl p-6 min-h-screen">
-      <h1 className="text-4xl py-6">{post.title}</h1>
-
-      <div className="text-sm text-slate-400">
-        {new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-          new Date(post.createdAt),
-        )}
+    <Link href={`/blog/${slug}`}>
+      <div className="p-5 cursor-pointer">
+        <div
+          className="w-full border-1 dark:border-[#191919] dark:bg-[#070707] p-3 flex flex-col gap-3 
+        hover:border-identity/40 dark:hover:bg-[#0D0D0D] rounded-md shadow-lg transition-all duration-300 ease-in-out
+        bg-white 
+        "
+        >
+          <div className="flex justify-between">
+            <div>{title}</div>
+            <div className="text-right">
+              {new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+                new Date(createdAt),
+              )}
+            </div>
+          </div>
+          <div className="flex justify-between">
+            <div className="flex gap-2">{handleTags(tags)}</div>
+            <div className="text-right">
+              <MdOutlineReadMore className="text-identity text-2xl" />
+            </div>
+          </div>
+        </div>
       </div>
-      <hr className="my-6" />
-      <div className="flex space-x-2">{handleTags(post.tags)}</div>
-
-      <div
-        className="text-xl mt-4 max-w-3xl leading-10 prose prose-p:text-white prose-headings:text-white"
-        dangerouslySetInnerHTML={{ __html: post.html! }}
-      ></div>
-    </div>
+    </Link>
   );
 }
