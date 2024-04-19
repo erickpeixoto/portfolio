@@ -9,10 +9,10 @@ import {
   Post,
 } from "@/lib/types/notion";
 
-const DATABASE_ID: string = process.env.NEXT_PUBLIC_NOTION_BLOG_DB_ID!;
+const DATABASE_ID: string = process.env.NOTION_BLOG_DB_ID!;
 const PAGE_SIZE: number = 3;
 export async function getNotionClient(): Promise<Client> {
-  return new Client({ auth: process.env.NEXT_PUBLIC_NOTION_API_KEY });
+  return new Client({ auth: process.env.NOTION_API_KEY });
 }
 
 export async function getPosts(
