@@ -44,6 +44,12 @@ export interface Images {
   rich_text: RichText[];
 }
 
+export interface Description {
+  id: string;
+  type: "rich_text";
+  rich_text: RichText[];
+}
+
 export interface RichText {
   type: string;
   text: Text;
@@ -58,7 +64,7 @@ export interface Properties {
   title: Title;
   createdAt: NotionDate;
   image?: Images;
-  description?: Title;
+  description?: Description;
 }
 
 export interface Post {

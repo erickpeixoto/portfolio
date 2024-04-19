@@ -30,6 +30,10 @@ export async function getPosts() {
           ? post.properties.title.title[0].plain_text
           : "Default Title";
 
+      const description =
+        post.properties.description?.rich_text[0]?.plain_text ||
+        "Default Description";
+
       const slug =
         post.properties.slug && post.properties.slug.rich_text.length > 0
           ? post.properties.slug.rich_text[0].plain_text
@@ -47,10 +51,11 @@ export async function getPosts() {
 
       return {
         id: post.id,
-        title: title,
-        slug: slug,
-        tags: tags,
-        createdAt: createdAt,
+        title,
+        description,
+        slug,
+        tags,
+        createdAt,
       };
     });
   } catch (error) {
@@ -94,10 +99,10 @@ export async function getPost(slug: string) {
     return {
       id: post.id,
       title: post.properties.title.title[0]?.plain_text || "Default Title",
+      description: post.properties.description?.rich_text[0]?.plain_text || "",
       content: mdString,
       createdAt: createdAt,
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
-      description: post.properties.description?.title[0]?.plain_text || "",
       image: post.properties.image?.rich_text[0]?.plain_text || "",
     };
   } catch (error) {
