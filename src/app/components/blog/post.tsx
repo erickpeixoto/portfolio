@@ -16,11 +16,20 @@ export function PostItem({ post }: { post: Post }) {
         "
         >
           <div className="flex justify-between">
-            <div>{title}</div>
+            <div className="truncate md:text-ellipsis md:overflow-hidden">
+              {title}
+            </div>
             <div className="text-right">
-              {new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-                new Date(createdAt),
-              )}
+              <div className="hidden md:block">
+                {new Intl.DateTimeFormat("en-US", {
+                  dateStyle: "medium",
+                }).format(new Date(createdAt))}
+              </div>
+              <div className="md:hidden">
+                {new Intl.DateTimeFormat("en-US", {
+                  dateStyle: "short",
+                }).format(new Date(createdAt))}
+              </div>
             </div>
           </div>
           <div className="flex justify-between">
