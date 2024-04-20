@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache";
 import {
   BreadcrumbDynamic as Breadcrumb,
   BreadcrumbProps,
@@ -18,6 +19,7 @@ const breadcrumbs: BreadcrumbProps = {
 };
 
 export default async function PBlog() {
+  noStore();
   const data = await getPosts();
   return (
     <>
