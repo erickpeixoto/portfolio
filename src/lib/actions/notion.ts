@@ -14,31 +14,31 @@ const PAGE_SIZE: number = 3;
 export async function getNotionClient(): Promise<Client> {
   return new Client({ auth: process.env.NOTION_API_KEY });
 }
-const isProd = process.env.NODE_ENV === "production";
-const filter = isProd
-  ? {
-      filter: {
-        property: "published",
-        checkbox: { equals: true },
-      },
-    }
-  : {};
+const buildQueryParams = (isProd: boolean) => ({
+  database_id: DATABASE_ID,
+  page_size: PAGE_SIZE,
+  sorts: [{ property: "createdAt", direction: "descending" }],
+  filter: isProd
+    ? {
+        property: "status",
+        status: {
+          equals: "published",
+        },
+      }
+    : undefined,
+});
 
 export async function getPosts(
   startCursor?: string,
 ): Promise<NotionCallResponse> {
   try {
     const notion = await getNotionClient();
-    const response = await notion.databases.query({
-      ...filter,
-      start_cursor: startCursor,
-      page_size: PAGE_SIZE,
-      database_id: DATABASE_ID,
-    });
-
-    if (!response.results) {
+    const response = await notion.databases.query(
+      buildQueryParams(process.env.NODE_ENV === "production") as any,
+    );
+    if (!response.results)
       return { posts: [], next_cursor: null, has_more: false };
-    }
+
     const typedResponse = response as unknown as NotionDatabaseResponse;
 
     const posts: Post[] = typedResponse.results.map((post) => {
