@@ -16,9 +16,9 @@ const breadcrumbs: BreadcrumbProps = {
 
 export default function PSkills() {
   return (
-    <>
+    <div className="h-screen">
       <Breadcrumb {...breadcrumbs} />
       <Skills />
-    </>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ export default async function PBlog() {
   noStore();
   const data = await getPosts();
   return (
-    <>
+    <div className="h-screen">
       <Breadcrumb {...breadcrumbs} />
       <ScrollShadow
         hideScrollBar
@@ -31,6 +31,6 @@ export default async function PBlog() {
         <PostList {...data} />
         {data.has_more && <LoadMore {...data} />}
       </ScrollShadow>
-    </>
+    </div>
   );
 }

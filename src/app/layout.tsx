@@ -7,6 +7,7 @@ import { ColorSchemeScript } from "@mantine/core";
 import { Providers } from "@/app/providers";
 import { NavBar } from "@/app/components/navBar";
 import { cn, constructMetadata } from "@/lib/utils";
+import { CopyRight } from "@/app/components/copy-right";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -37,14 +38,15 @@ export default function RootLayout({
         className={cn(
           inter.className,
           plusJakartaSans.variable,
-          "flex place-content-center",
+          "flex place-content-center pb-5",
         )}
       >
         <ColorSchemeScript />
-        <main className="w-full h-auto min-h-screen dark:bg-black bg-white md:m-[40px] lg:max-w-screen-2xl">
+        <main className="w-full h-full min-h-screen dark:bg-black bg-white md:m-[40px] lg:max-w-screen-2xl">
           <Providers>
             <NavBar />
             {children}
+            <CopyRight />
           </Providers>
         </main>
       </body>
