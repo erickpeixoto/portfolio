@@ -2,16 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { Project } from "@/server/mock/projects/project.types";
-import { AnimatePresence, motion } from "framer-motion";
 import { Image } from "@nextui-org/react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
-
-const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
-const stagger = 0.15;
 
 export const HoverEffect = ({
   items,
@@ -20,8 +13,6 @@ export const HoverEffect = ({
   items: Project[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
     <div
       className={cn(
@@ -29,48 +20,21 @@ export const HoverEffect = ({
         className,
       )}
     >
-      <AnimatePresence>
-        {items.map((item, idx) => (
+      {items.map((item, index) => (
+        <Link
+          href={`/projects/${item.id}`}
+          key={item?.id}
+          className="relative group  block p-2 h-full w-full"
+        >
           <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{
-              delay: idx * stagger,
-              ease: "easeInOut",
-              duration: 0.1,
-            }}
-            viewport={{ amount: 0 }}
-            className="rounded relative w-full"
-            key={idx}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
           >
-            <Link
-              href={`/projects/${item.id}`}
-              key={item?.id}
-              className="relative group  block p-2 h-full w-full"
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {hoveredIndex === idx && (
-                <motion.span
-                  className="absolute inset-0 h-full w-full bg-identity/35 dark:bg-slate-800/[0.8] block  rounded-3xl"
-                  layoutId="hoverBackground"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.15 },
-                  }}
-                  exit={{
-                    opacity: 0,
-                    transition: { duration: 0.15, delay: 0.2 },
-                  }}
-                />
-              )}
-              <Card project={item} />
-            </Link>
+            <Card project={item} />
           </motion.div>
-        ))}
-      </AnimatePresence>
+        </Link>
+      ))}
     </div>
   );
 };

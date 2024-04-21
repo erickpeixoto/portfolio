@@ -250,4 +250,51 @@ export const TESTIMONIALS = [
       </div>
     ),
   },
+  {
+    id: 6,
+    name: "Alexandre Rios",
+    designation: "https://www.linkedin.com/in/xanderios/",
+    company: "Fuerza Studio",
+    role: "Full Stack Developer",
+    content: (
+      <div>
+        <Avatar
+          items={[
+            {
+              id: 6,
+              name: "Alexandre Rios",
+              designation: "Full Stack Developer at Fuerza Studio",
+              icon: (
+                <Image
+                  src="/testimonials/xande.jpg"
+                  alt="Alexandre Rios"
+                  width={100}
+                  height={100}
+                  className="rounded-full border-2 border-identity m-3"
+                />
+              ),
+            },
+          ]}
+          className="float-start m-3"
+        />
+        <p>
+          I had the opportunity to work with Erick for over 7 months. He is a
+          professional capable of
+          <Highlight>planning</Highlight>, <Highlight>developing</Highlight>,
+          and <Highlight>managing large-scale projects</Highlight>, creating an
+          <Highlight>efficient</Highlight> and{" "}
+          <Highlight>friendly environment</Highlight> at the same time.
+        </p>
+        <p>
+          I can say that Erick wes one of the members at Fuerza who managed to
+          effectively engage the SportX team, implementing{" "}
+          <Highlight>good practices</Highlight>, encouraging{" "}
+          <Highlight>communication</Highlight> (in English, which prepared us
+          for an external environment), creating learning through{" "}
+          <Highlight>challenges</Highlight> and even through playing poker
+          (during planning sessions).
+        </p>
+      </div>
+    ),
+  },
 ];

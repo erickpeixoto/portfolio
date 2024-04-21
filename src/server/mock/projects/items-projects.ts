@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Veritone SportX",
     description:
       "Developed the interface for Veritone SportX, leveraging aiWARE to analyze and license sports data and videos, facilitating broad content distribution with secure payments.",
-    images: ["/SportX.1.webp", "/SportX.2.webp", "/SportX.3.png"],
+    images: ["/sportx1.png", "/SportX.2.webp", "/SportX.3.png"],
     companyInfo: {
       name: "Fuerza Studio",
       website: "https://www.fuerzastudio.com.br",

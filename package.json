@@ -12,7 +12,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "email": "email dev --port 3600"
+    "email": "email dev --port 3600",
+    "release": "rm -rf node_modules && rm -rf .next/ && bun i && next build && next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
