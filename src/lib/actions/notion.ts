@@ -1,7 +1,6 @@
 "use server";
 
 import { Client } from "@notionhq/client";
-import { NotionToMarkdown } from "notion-to-md";
 import { cache } from "react";
 import {
   NotionCallResponse,
@@ -110,10 +109,6 @@ export async function getPost(slug: string) {
       throw new Error("The requested post does not have properties.");
     }
 
-    const n2m = new NotionToMarkdown({ notionClient: notion });
-    const mdblocks = await n2m.pageToMarkdown(post.id);
-    const mdString = n2m.toMarkdownString(mdblocks);
-
     const createdAt =
       post.properties.createdAt && post.properties.createdAt.date
         ? new Date(post.properties.createdAt.date.start).toISOString()
@@ -123,7 +118,6 @@ export async function getPost(slug: string) {
       id: post.id,
       title: post.properties.title.title[0]?.plain_text || "Default Title",
       description: post.properties.description?.rich_text[0]?.plain_text || "",
-      content: mdString,
       createdAt: createdAt,
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
       image: post.properties.image?.rich_text[0]?.plain_text || "",
