@@ -13,7 +13,7 @@ export function Testimonials() {
           <FaHeart className="text-identity w-8" />{" "}
         </span>
       </h1>
-      <Separator className="md:w-1/3 w-full mb-16" />
+      <Separator className="w-full mb-20" />
       <CardStack items={TESTIMONIALS} />
     </div>
   );

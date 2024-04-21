@@ -36,8 +36,8 @@ export default function ContactForm() {
   return (
     <div className="w-full">
       <div className="md:w-[600px] w-full">
-        <h1 className="text-2xl font-bold mb-4">Personal Information</h1>
-        <Separator className="mb-5 md:w-2/3 w-full" />
+        <h1 className="text-2xl font-bold mb-5">Personal Information</h1>
+        <Separator className="mb-8 w-full" />
         <div className="mb-2 flex items-center">
           <MdPhone className="text-lg mr-2" />
           <a href="tel:+5562984729965" className="hover:underline">
