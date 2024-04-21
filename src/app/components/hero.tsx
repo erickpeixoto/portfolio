@@ -33,7 +33,9 @@ export default function Hero() {
           <span className="after:content-['_↗'] mr-3"></span>
           my name is
         </div>
-        <TypewriterEffect words={logoWords} />
+        <div className="font-bold text-4xl md:text-5xl">
+          <span className="text-identity">Erick </span>Eduardo
+        </div>
         <div className="font-inter mt-4 text-base max-w-lg text-left text-gray-500 dark:text-gray-400 ">
           Seasoned developer with 10+ years' experience, specializing in React,
           across startups and major corporations, delivering innovative and
