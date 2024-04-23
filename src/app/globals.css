@@ -185,3 +185,30 @@ body {
 .notion-color-default {
   @apply text-gray-800 dark:text-gray-300;
 }
+.notion-image{
+  @apply mt-5 mb-5;
+}
+.notion-color-yellow_background{
+  @apply bg-yellow-100 dark:bg-yellow-800;
+}
+.notion-color-red_background{
+  @apply bg-red-100 dark:bg-red-800;
+}
+.notion-color-blue_background{
+  @apply bg-blue-100 dark:bg-blue-800;
+}
+.notion-color-green_background{
+  @apply bg-green-100 dark:bg-green-800;
+}
+.notion-color-gray_background{
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+.notion-color_orange_background{
+  @apply bg-orange-100 dark:bg-orange-800;
+}
+.notion-color_purple_background{
+  @apply bg-purple-100 dark:bg-purple-800;
+}
+.notion-color-purple_background{
+  @apply bg-purple-100 dark:bg-purple-800;
+}

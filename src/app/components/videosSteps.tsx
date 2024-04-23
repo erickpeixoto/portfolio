@@ -56,9 +56,9 @@ export function VideoSteps() {
           className="w-full border-2 border-identity/65 rounded-lg overflow-hidden shadow-lg p-5"
           key={active}
         >
-          {steps[active].videoSrc ? (
+          {steps[active]?.videoSrc ? (
             <Video
-              src={steps[active].videoSrc ?? ""}
+              src={steps[active]?.videoSrc ?? ""}
               controls
               accentColor="#7E74F1"
               poster={steps[active].placeholder}

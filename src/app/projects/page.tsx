@@ -20,7 +20,7 @@ export default async function Projects() {
   const projects = await loadProjects(1, 2);
 
   return (
-    <>
+    <div className="h-screen">
       <BreadcrumbDynamic {...breadcrumbs} />
       <div className="md:flex pt-10">
         <div className="md:w-1/3 flex flex-col justify-between p-3">
@@ -30,6 +30,6 @@ export default async function Projects() {
           <ProjectList projects={projects} />
         </div>
       </div>
-    </>
+    </div>
   );
 }

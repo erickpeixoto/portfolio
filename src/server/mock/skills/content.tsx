@@ -97,7 +97,7 @@ export function Content(): Content[] {
       ),
     },
     {
-      title: "Mastering Development Processes",
+      title: "Development Processes",
       description:
         "Through automating build and deployment processes with CircleCI, hosting on Vercel, managing infrastructure on AWS, and maintaining open lines of communication with clients via Google Meet, I champion a process-driven culture. This approach not only enhances efficiency and scalability but also ensures that our deliverables are perfectly aligned with our client's needs and expectations.",
       content: (
