@@ -17,9 +17,9 @@ export function Content(): Content[] {
         <div className="border border-slate/[0.2] dark:border-white/[0.2] flex flex-col items-start mx-auto p-4 relative h-full">
           <EvervaultCard text="Client" />
 
-          {/* <div className="dark:text-white text-slate-500 mt-4 text-sm font-light flex flex-row gap-3">
+          <div className="dark:text-white text-slate-500 mt-4 text-sm font-light flex flex-row gap-3">
             <AnimatedTooltip items={stack().front} />
-          </div> */}
+          </div>
 
           <div className="mt-5 dark:text-white text-slate-500">
             My expertise in Next.js empowers me to architect web applications
@@ -47,9 +47,9 @@ export function Content(): Content[] {
         <div className="border  border-slate/[0.2] dark:border-white/[0.2] flex flex-col items-start  mx-auto p-4 relative h-full">
           <EvervaultCard text="Server" />
 
-          {/* <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3  ">
+          <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3  ">
             <AnimatedTooltip items={stack().back} />
-          </div> */}
+          </div>
 
           <div className="mt-5 dark:text-white text-slate-500">
             Leveraging advanced backend technologies such as Node.js, Go, and
@@ -75,9 +75,9 @@ export function Content(): Content[] {
       content: (
         <div className="border  border-slate/[0.2] dark:border-white/[0.2] flex flex-col items-start mx-auto p-4 relative h-full">
           <EvervaultCard text="Leadership" />
-          {/* <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3">
+          <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3">
             <AnimatedTooltip items={stack().lead} />
-          </div> */}
+          </div>
           <div className="mt-5 dark:text-white text-slate-500">
             In my capacity as a Tech Lead, I drive technological advancement and
             organizational growth by fostering a culture of innovation. I ensure
@@ -104,9 +104,9 @@ export function Content(): Content[] {
         <div className="border  border-slate/[0.2] dark:border-white/[0.2] flex flex-col items-start  mx-auto p-4 relative h-full">
           <EvervaultCard text="Technology" />
 
-          {/* <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3">
+          <div className="dark:text-white text-black mt-4 text-sm font-light flex flex-row gap-3">
             <AnimatedTooltip items={stack().process} />
-          </div> */}
+          </div>
 
           <div className="mt-5 dark:text-white text-slate-500">
             I spearhead development processes by integrating CI/CD pipelines
