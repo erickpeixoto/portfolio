@@ -297,4 +297,45 @@ export const TESTIMONIALS = [
       </div>
     ),
   },
+  {
+    id: 7,
+    name: "Giovani Alves",
+    designation: "https://www.linkedin.com/in/giovani-biagi-alves/",
+    company: "Fuerza Studio",
+    role: "Senior Developer",
+    content: (
+      <div>
+        <Avatar
+          items={[
+            {
+              id: 7,
+              name: "Giovani Alves",
+              designation: "Senior Developer at Fuerza Studio",
+              icon: (
+                <Image
+                  src="/testimonials/giovani.jpeg"
+                  alt="Giovani Alves"
+                  width={100}
+                  height={100}
+                  className="rounded-full border-2 border-identity m-3"
+                />
+              ),
+            },
+          ]}
+          className="float-start m-3"
+        />
+        <p>
+          I’ve had the opportunity to work with Erick on several projects, and I
+          can say that he is a professional unlike any I've met! The breadth of
+          his <Highlight>technical knowledge</Highlight>,{" "}
+          <Highlight>resilience</Highlight>, and{" "}
+          <Highlight>leadership sense</Highlight> is incredible. As a result of
+          being led by him, I was able to overcome various challenges in
+          advancing my career as a developer. I am very grateful for all the
+          shared <Highlight>professional</Highlight> and{" "}
+          <Highlight>life experiences</Highlight>.
+        </p>
+      </div>
+    ),
+  },
 ];
