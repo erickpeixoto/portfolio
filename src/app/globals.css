@@ -212,3 +212,19 @@ body {
 .notion-color-purple_background{
   @apply bg-purple-100 dark:bg-purple-800;
 }
+.notion-color-purple {
+  @apply text-purple-700 dark:text-purple-300;
+}
+.notion-color-green {
+  @apply text-green-700 dark:text-green-300;
+}
+.notion-color-blue {
+  @apply text-blue-700 dark:text-blue-300;
+}
+.notion-color-red {
+  @apply text-red-700 dark:text-red-300;
+}
+
+blockquote {
+  @apply border-l-3 border-primary/30 pl-4 italic;
+}

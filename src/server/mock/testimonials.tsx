@@ -338,4 +338,47 @@ export const TESTIMONIALS = [
       </div>
     ),
   },
+  {
+    id: 8,
+    name: "Giuliane Oliveira",
+    designation: "https://www.linkedin.com/in/giuliane-oliveira/",
+    company: "Fuerza Studio",
+    role: "Frontend Developer",
+    content: (
+      <div>
+        <Avatar
+          items={[
+            {
+              id: 8,
+              name: "Giuliane Oliveira",
+              designation: "Frontend Developer at Fuerza Studio",
+              icon: (
+                <Image
+                  src="/testimonials/giu.jpeg"
+                  alt="Giuliane Oliveira"
+                  width={100}
+                  height={100}
+                  className="rounded-full border-2 border-identity m-3"
+                />
+              ),
+            },
+          ]}
+          className="float-start m-3"
+        />
+        <p>
+          I've worked with Erick on several international projects under his
+          leadership, focusing on cutting-edge technologies like{" "}
+          <Highlight>React</Highlight>, <Highlight>Next.js</Highlight>, and{" "}
+          <Highlight>unit testing</Highlight> which enhanced our development
+          quality. Erick was an{" "}
+          <Highlight>exceptional developer and inspiring Tech Lead</Highlight>.
+          He consistently shared his knowledge, uplifting our team's skills. His
+          guidance was crucial for the project's success, making him a highly
+          collaborative and motivational leader. I{" "}
+          <Highlight>highly recommend</Highlight> him, especially in challenging
+          work environments.
+        </p>
+      </div>
+    ),
+  },
 ];

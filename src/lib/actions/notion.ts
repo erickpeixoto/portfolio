@@ -13,9 +13,10 @@ const PAGE_SIZE: number = 3;
 export async function getNotionClient(): Promise<Client> {
   return new Client({ auth: process.env.NOTION_API_KEY });
 }
-const buildQueryParams = (isProd: boolean) => ({
+const buildQueryParams = (isProd: boolean, startCursor?: string) => ({
   database_id: DATABASE_ID,
   page_size: PAGE_SIZE,
+  start_cursor: startCursor,
   sorts: [{ property: "createdAt", direction: "descending" }],
   filter: isProd
     ? {
@@ -33,7 +34,10 @@ export async function getPosts(
   try {
     const notion = await getNotionClient();
     const response = await notion.databases.query(
-      buildQueryParams(process.env.NODE_ENV === "production") as any,
+      buildQueryParams(
+        process.env.NODE_ENV === "production",
+        startCursor,
+      ) as any,
     );
     if (!response.results)
       return { posts: [], next_cursor: null, has_more: false };
