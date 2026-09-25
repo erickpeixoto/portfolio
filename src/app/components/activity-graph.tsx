@@ -102,7 +102,7 @@ export function ActivityGraph() {
       </div>
 
       <div className="mt-2 flex items-center justify-between gap-4 font-mono text-[10px] text-[--text-muted]">
-        <span>From my git history: client work and my own products</span>
+        <span>From my git history: client work and AI products</span>
         <span className="flex items-center gap-1 whitespace-nowrap">
           Less
           {LEVEL_CLASS.map((c, i) => (

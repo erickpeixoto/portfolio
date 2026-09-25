@@ -9,7 +9,7 @@ export const projects: Project[] = [
     period: "Nov 2025 – present",
     title: "MestreObra, construction management on WhatsApp",
     description:
-      "An AI agent on WhatsApp for civil engineers, renovation architects and small builders. In production at mestreobra.com.br.",
+      "An AI agent on WhatsApp for civil engineers, renovation architects and small builders.",
     problem:
       "On a job site a receipt arrives, the crew needs materials and the client wants an update, all at once. Small builders track it in chats and spreadsheets and lose control of costs.",
     images: [
@@ -39,7 +39,7 @@ export const projects: Project[] = [
       "Prompt caching, model selection by plan and cost tracking per conversation",
     ],
     result:
-      "In production with a single plan and a free trial. The field team never installs anything or creates a password; the manager gets everything organized.",
+      "A single plan with a free trial. The field team never installs anything or creates a password; the manager gets everything organized.",
   },
   {
     id: "mentalcare",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     period: "Jul 2025 – present",
     title: "Mental Care, practice management for therapists",
     description:
-      "A complete practice system with Luna, an AI secretary on WhatsApp, for psychologists, psychiatrists and small clinics. In production.",
+      "A complete practice system with Luna, an AI secretary on WhatsApp, for psychologists, psychiatrists and small clinics.",
     problem:
       "Therapists lose hours every week to scheduling, reminders, payments and notes instead of seeing patients.",
     images: ["/projects/mentalcare-site.jpg"],
@@ -74,7 +74,7 @@ export const projects: Project[] = [
       "Privacy and LGPD by design; patients only receive reminders and links",
     ],
     result:
-      "In production in three languages, with telehealth over Google Meet and a public page per professional.",
+      "Available in three languages, with telehealth over Google Meet and a public page per professional.",
   },
   {
     id: "lino",

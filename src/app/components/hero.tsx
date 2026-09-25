@@ -90,7 +90,7 @@ export default function Hero() {
               className="mt-6 text-base md:text-lg text-[--text-secondary] max-w-md leading-relaxed"
             >
               13+ years building web products across agencies, startups and US
-              teams. Today I build AI agents that run in production.
+              teams. Today I also build AI products with agents at the core.
             </motion.p>
 
             {/* Social icons */}
