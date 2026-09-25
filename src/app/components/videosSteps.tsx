@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { Stepper } from "@mantine/core";
 import { motion } from "framer-motion";
-import Video from "next-video";
-
 import { Separator } from "@/app/components/ui/separator";
-import firstVideo from "@/videos/introduction.mov";
+import Video from "next-video";
+import type { Asset } from "next-video/dist/assets.js";
+import introductionVideo from "@/videos/introduction.mov.json";
 
 import Link from "next/link";
+
+const firstVideo = introductionVideo as Asset;
 
 export function VideoSteps() {
   const [active, setActive] = useState(0);
