@@ -6,31 +6,31 @@ import {
 import { getPosts } from "@/lib/actions/notion";
 import { PostList } from "@/app/components/blog/list";
 import { LoadMore } from "@/app/components/blog/loadMore";
-import { ScrollShadow } from "@nextui-org/react";
 
 const breadcrumbs: BreadcrumbProps = {
-  items: [
-    {
-      URI: "/",
-      description: "Home",
-    },
-  ],
+  items: [{ URI: "/", description: "Home" }],
   active: "Blog",
 };
 
 export default async function PBlog() {
   noStore();
-  const data = await getPosts();
+  const data = await getPosts().catch(() => null);
   return (
-    <div className="h-screen">
+    <div className="min-h-screen px-4 md:px-8 pb-20">
       <Breadcrumb {...breadcrumbs} />
-      <ScrollShadow
-        hideScrollBar
-        className="w-full h-[600px] dark:bg-black bg-white dark:shadow-none shadow-md rounded-lg p-5"
-      >
-        <PostList {...data} />
-        {data.has_more && <LoadMore {...data} />}
-      </ScrollShadow>
+      <div className="max-w-3xl mx-auto mt-6">
+        {data ? (
+          <>
+            <PostList {...data} />
+            {data.has_more && <LoadMore {...data} />}
+          </>
+        ) : (
+          <p className="py-16 text-center text-[--text-secondary]">
+            The posts could not be loaded right now. Please try again in a
+            moment.
+          </p>
+        )}
+      </div>
     </div>
   );
 }

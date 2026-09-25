@@ -24,7 +24,7 @@ export default async function PDetails({
   };
 
   return (
-    <div className="h-screen">
+    <div className="min-h-screen pb-16">
       <BreadcrumbDynamic {...breadcrumb} />
       <ProjectDetails id={id} />
     </div>

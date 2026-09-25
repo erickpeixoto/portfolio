@@ -26,6 +26,17 @@
     --radius: 0.5rem;
     --body-bg: 0 0% 100%;
     --body-bg-foreground: 0 0 12%;
+
+    /* Design system tokens */
+    --surface-0: #080808;
+    --surface-1: #0F0F10;
+    --surface-2: #17171A;
+    --surface-border: rgba(126, 116, 241, 0.12);
+    --identity-dim: rgba(126, 116, 241, 0.08);
+    --identity-glow: rgba(126, 116, 241, 0.25);
+    --text-primary: #F4F4F5;
+    --text-secondary: #A1A1AA;
+    --text-muted: #52525B;
   }
 
   .dark {
@@ -58,10 +69,10 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-primary;
+    @apply text-foreground bg-white dark:bg-[#080808];
   }
   html {
-    @apply md:bg-identity !important;
+    @apply bg-white dark:bg-[#080808];
   }
 }
 

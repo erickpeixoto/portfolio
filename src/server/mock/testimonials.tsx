@@ -2,6 +2,79 @@ import { AnimatedTooltip as Avatar } from "@/app/components/tooltip";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+export interface SimpleTestimonial {
+  id: number;
+  name: string;
+  role: string;
+  company: string;
+  linkedinUrl: string;
+  photo: string;
+  quote: string;
+}
+
+export const SIMPLE_TESTIMONIALS: SimpleTestimonial[] = [
+  {
+    id: 0,
+    name: "Guilherme Trindade",
+    role: "Full Stack Developer",
+    company: "Fuerza Studio",
+    linkedinUrl: "https://www.linkedin.com/in/guilhermeft/",
+    photo: "/testimonials/guilherme.jpeg",
+    quote:
+      "Working with Erick was very good for my career. From the way he manages teams to the technologies used, it makes both the team work better and any application easy to understand, applying legible market standards. It was with him that I learned about unit tests and the main programming patterns with Next.js.",
+  },
+  {
+    id: 1,
+    name: "Nailan Barbosa",
+    role: "Developer Lead",
+    company: "Fuerza Studio",
+    linkedinUrl: "https://www.linkedin.com/in/nailanbarbosa/",
+    photo: "/testimonials/nailan.jpeg",
+    quote:
+      "The best tech lead I've ever had, always concerned with the quality of the product and knowledgeable about the entire scope. He masters the tools he uses and values clean and tested code like no one else.",
+  },
+  {
+    id: 2,
+    name: "Bruno Pinto",
+    role: "Project Manager",
+    company: "Fuerza Studio",
+    linkedinUrl: "https://www.linkedin.com/in/brunopop/",
+    photo: "/testimonials/bruno.jpeg",
+    quote:
+      "Erick's technical acumen is truly exceptional—whether it's a development query or a strategic issue, he's always equipped with the right answers. His expertise in people management is equally impressive, ensuring smooth project progression.",
+  },
+  {
+    id: 3,
+    name: "Raphael Portela",
+    role: "Software Engineer",
+    company: "Radix Technology",
+    linkedinUrl: "https://www.linkedin.com/in/raphael-portela-7a1a5b1a/",
+    photo: "/testimonials/raphael.jpeg",
+    quote:
+      "As the Tech Lead, Erick excelled in enhancing team cohesion, good code standards, and practices. He consistently guided us to work collaboratively, encouraging growth beyond mere coding. I had an amazing time working with him.",
+  },
+  {
+    id: 4,
+    name: "Giovani Alves",
+    role: "Senior Developer",
+    company: "Fuerza Studio",
+    linkedinUrl: "https://www.linkedin.com/in/giovani-biagi-alves/",
+    photo: "/testimonials/giovani.jpeg",
+    quote:
+      "I can say that Erick is a professional unlike any I've met. The breadth of his technical knowledge, resilience, and leadership sense is incredible. As a result of being led by him, I was able to overcome various challenges in advancing my career.",
+  },
+  {
+    id: 5,
+    name: "Giuliane Oliveira",
+    role: "Frontend Developer",
+    company: "Fuerza Studio",
+    linkedinUrl: "https://www.linkedin.com/in/giuliane-oliveira/",
+    photo: "/testimonials/giu.jpeg",
+    quote:
+      "Erick was an exceptional developer and inspiring Tech Lead. He consistently shared his knowledge, uplifting our team's skills. His guidance was crucial for the project's success. I highly recommend him, especially in challenging work environments.",
+  },
+];
+
 const Highlight = ({
   children,
   className,

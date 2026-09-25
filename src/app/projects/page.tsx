@@ -7,26 +7,21 @@ import {
 import { ProjectList } from "../components/project-list";
 
 const breadcrumbs: BreadcrumbProps = {
-  items: [
-    {
-      URI: "/",
-      description: "Home",
-    },
-  ],
+  items: [{ URI: "/", description: "Home" }],
   active: "Projects & Milestones",
 };
 
 export default async function Projects() {
-  const projects = await loadProjects(1, 2);
+  const projects = await loadProjects(1, 100);
 
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       <BreadcrumbDynamic {...breadcrumbs} />
       <div className="md:flex pt-10">
-        <div className="md:w-1/3 flex flex-col justify-between p-3">
+        <div className="md:w-1/3 flex flex-col p-3">
           <Timeline />
         </div>
-        <div className="h-40 w-full">
+        <div className="flex-1">
           <ProjectList projects={projects} />
         </div>
       </div>

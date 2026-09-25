@@ -1,178 +1,184 @@
 "use client";
 
+import { ActivityGraph } from "@/app/components/activity-graph";
+
 import { Spotlight } from "@/app/components/spotlight";
-import { TypewriterEffect } from "./typingHero";
 import Link from "next/link";
-import { Github, Linkedin, MailIcon, FileText } from "lucide-react";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/app//components/ui/hover-card";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import { Meteors } from "@/app/components/meteors";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+const socialLinks = [
+  {
+    href: "https://www.linkedin.com/in/erickpeixoto/",
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://github.com/erickpeixoto/",
+    icon: Github,
+    label: "GitHub",
+  },
+  {
+    href: "mailto:erickepeixoto@gmail.com",
+    icon: Mail,
+    label: "Email",
+  },
+  {
+    href: "/Erick-Eduardo-Resume.pdf",
+    icon: FileText,
+    label: "Resume",
+    external: true,
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
 
 export default function Hero() {
-  const logoWords = [
-    {
-      text: "Erick",
-      className: "text-[32px]",
-    },
-    {
-      text: "Eduardo",
-      className: "text-identity dark:text-identity text-[32px]",
-    },
-  ];
-
   return (
-    <div className="md:flex justify-between">
-      <div className="w-full mt-32 md:pl-20 pl-12">
-        <Spotlight className="-top-8 -left-3" fill="#C2BEBE" />
-        <div className="text-gray dark:text-gray-500 uppercase leading-loose tracking-[.25em]">
-          <span className="after:content-['_↗'] mr-3"></span>
-          my name is
-        </div>
-        <div className="font-bold text-4xl md:text-5xl">
-          <span className="text-identity">Erick </span>Eduardo
-        </div>
-        <div className="font-inter mt-4 text-base max-w-lg text-left text-gray-500 dark:text-gray-400 ">
-          Seasoned developer with 10+ years' experience, specializing in React,
-          across startups and major corporations, delivering innovative and
-          efficient software solutions.
-        </div>
-        {/* Social Network Items */}
-        <div className="mt-10 flex gap-4">
-          <HoverCard>
-            <HoverCardTrigger className="hidden md:block">
-              <Linkedin
-                className="dark:text-gray-300 text-gray-500 hover:text-identity 
-                transitoion duration-300 ease-in-out cursor-pointer
-                "
-              />
-            </HoverCardTrigger>
-            <Link
-              href="https://www.linkedin.com/in/erickpeixoto/"
-              className="text-blue-400 md:hidden block"
-              target="_blank"
-            >
-              <Linkedin
-                className="dark:text-gray-300 text-gray-500 hover:text-identity 
-                transitoion duration-300 ease-in-out cursor-pointer
-                "
-              />
-            </Link>
-            <HoverCardContent>
-              <div className="p-4 flex gap-3 flex-col">
-                <Link
-                  href="https://www.linkedin.com/in/erickpeixoto/"
-                  className="text-blue-400"
-                  target="_blank"
-                >
-                  LinkedIn
-                </Link>
-                <div>
-                  Let's connect! Find me on LinkedIn to explore professional
-                  opportunities and collaborations.
-                </div>
-                <p>
-                  <Link
-                    href="https://www.linkedin.com/in/erickpeixoto/"
-                    className="text-blue-400"
-                    target="_blank"
-                  >
-                    Click here
-                  </Link>
-                </p>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-          <Link href="https://github.com/erickpeixoto/" target="_blank">
-            <Github
-              className="dark:text-gray-300 text-gray-500 hover:text-identity 
-                transitoion duration-300 ease-in-out
-                "
-            />
-          </Link>
-          <Link href="mailto:erickepeixoto@gmail.com">
-            <MailIcon
-              className="dark:text-gray-300 text-gray-500 hover:text-identity 
-                transitoion duration-300 ease-in-out
-                "
-            />
-          </Link>
+    <div className="relative min-h-[90vh] flex items-center">
+      <Spotlight className="-top-8 -left-3" fill="#7E74F1" />
 
-          <HoverCard>
-            <HoverCardTrigger className="hidden md:block">
-              <FileText
-                className="dark:text-gray-300 text-gray-500 hover:text-identity
-                        transitoion duration-300 ease-in-out cursor-pointer
-                        "
-              />
-            </HoverCardTrigger>
-            <Link
-              href={
-                "https://utfs.io/f/55cd37bf-204d-4e6a-bdc2-cc43e450b1f4-e1qxd7.pdf"
-              }
-              className="text-blue-400 md:hidden block"
-              target="_blank"
+      <div className="w-full px-6 md:px-20 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 md:gap-8">
+          {/* Left: Text content */}
+          <div className="flex-1 max-w-2xl">
+            {/* Role label */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+              className="font-mono text-xs uppercase tracking-[0.3em] text-[--text-muted] mb-6 flex items-center gap-2"
             >
-              <FileText
-                className="dark:text-gray-300 text-gray-500 hover:text-identity
-                        transitoion duration-300 ease-in-out cursor-pointer
-                        "
-              />
-            </Link>
-            <HoverCardContent>
-              <div className="p-4 flex gap-4 flex-col">
-                <div className="font-bold text-blue-400">Resume</div>
-                <p>Find my resume here. It's a PDF file.</p>
-                <Link
-                  href={
-                    "https://utfs.io/f/55cd37bf-204d-4e6a-bdc2-cc43e450b1f4-e1qxd7.pdf"
-                  }
-                  className="text-blue-400"
-                  target="_blank"
-                >
-                  Click here to download
-                </Link>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-        </div>
-      </div>
+              <span className="text-identity">↗</span>
+              Full Stack · Tech Lead · AI Engineer
+            </motion.div>
 
-      <div className="flex mt-16 w-full place-content-center">
-        <motion.div
-          initial={{ width: 0, height: 0, rotate: 0 }}
-          animate={{ width: 300, height: 400, rotate: -10 }}
-          transition={{
-            duration: 0.5,
-            rotate: {
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-              restDelta: 2,
-            },
-          }}
-          className="bg-identity rounded w-[380px] h-[80px] z-0"
-        >
+            {/* Name */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.1}
+            >
+              <h1 className="font-bricolage font-extrabold leading-[0.9] tracking-tight">
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-identity">
+                  Erick
+                </span>
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl dark:text-[--text-primary] text-gray-900">
+                  Eduardo.
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* Tagline */}
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.2}
+              className="mt-6 text-base md:text-lg text-[--text-secondary] max-w-md leading-relaxed"
+            >
+              13+ years building web products across agencies, startups and US
+              teams. Today I build AI agents that run in production.
+            </motion.p>
+
+            {/* Social icons */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.3}
+              className="mt-8 flex items-center gap-5"
+            >
+              {socialLinks.map(({ href, icon: Icon, label, external }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  className={cn(
+                    "text-[--text-muted] hover:text-identity transition-colors duration-200",
+                  )}
+                >
+                  <Icon size={20} strokeWidth={1.5} />
+                </Link>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right: Photo */}
           <motion.div
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 10 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="bg-[#EAE6FE] p-4 rounded z-10 w-[300px] h-[395px] rotate-0 "
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex justify-center md:justify-end"
           >
-            <Image
-              src="/hero/profle2.png"
-              alt="Hero"
-              width={300}
-              height={400}
-            />
+            <div className="relative">
+              {/* Glow ring */}
+              <div className="absolute inset-0 rounded-2xl bg-identity opacity-20 blur-2xl scale-105" />
+
+              {/* Tilted backing */}
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: -6 }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                }}
+                className="absolute inset-0 rounded-2xl bg-identity/30"
+              />
+
+              {/* Photo frame */}
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 4 }}
+                transition={{
+                  delay: 0.6,
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                }}
+                className="relative rounded-2xl overflow-hidden border border-[--surface-border] z-10"
+              >
+                <Image
+                  src="/hero/profle2.png"
+                  alt="Erick Eduardo"
+                  width={280}
+                  height={360}
+                  className="block"
+                  priority
+                />
+              </motion.div>
+            </div>
           </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <ActivityGraph />
         </motion.div>
       </div>
-      <Meteors number={20} className="-left-10" />
+
+      <Meteors number={12} className="-left-10" />
     </div>
   );
 }

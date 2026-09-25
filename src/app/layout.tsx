@@ -1,4 +1,8 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Bricolage_Grotesque,
+  JetBrains_Mono,
+} from "next/font/google";
 
 import "./globals.css";
 import "@mantine/core/styles.css";
@@ -9,10 +13,21 @@ import { NavBar } from "@/app/components/navBar";
 import { cn, constructMetadata } from "@/lib/utils";
 import { CopyRight } from "@/app/components/copy-right";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  weight: ["400", "600", "700", "800"],
+});
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jaka",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
 });
 const metadata = constructMetadata({
   title: "Erick Peixoto",
@@ -36,9 +51,10 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          inter.className,
+          bricolage.variable,
           plusJakartaSans.variable,
-          "flex place-content-center pb-5",
+          jetbrainsMono.variable,
+          "flex place-content-center pb-5 font-jaka",
         )}
       >
         <ColorSchemeScript />

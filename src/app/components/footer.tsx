@@ -3,10 +3,21 @@ import { Testimonials } from "@/app/components/testimonialsSlider";
 
 export default function Footer() {
   return (
-    <footer className="md:flex flex-col items-center justify-center w-full border-t dark:border-gray-800 md:p-20">
-      <div className="w-full md:flex flex-row justify-between md:p-0 p-5">
-        <Testimonials />
-        <ContactForm />
+    <footer className="w-full mt-16">
+      <Testimonials />
+
+      <div
+        id="contact"
+        className="border-t border-[--surface-border] px-6 md:px-20 py-20 md:py-28"
+      >
+        <ContactForm wide />
+      </div>
+
+      {/* Copyright */}
+      <div className="border-t border-[--surface-border] px-6 md:px-20 py-4 flex items-center justify-center">
+        <p className="font-mono text-[11px] text-[--text-muted] uppercase tracking-widest">
+          © {new Date().getFullYear()} Erick Eduardo · erickpeixoto.tech
+        </p>
       </div>
     </footer>
   );

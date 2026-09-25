@@ -26,6 +26,9 @@ import {
   SiFirebase,
   SiCypress,
   SiPlaywright,
+  SiStripe,
+  SiSupabase,
+  SiWhatsapp,
   SiStorybook,
 } from "react-icons/si";
 
@@ -133,6 +136,21 @@ export function stackToIcon(stackName: string): JSX.Element {
         title="Playwright"
       />
     ),
+    Stripe: (
+      <SiStripe size={32} className="hover:text-identity" title="Stripe" />
+    ),
+    Supabase: (
+      <SiSupabase size={32} className="hover:text-identity" title="Supabase" />
+    ),
+    WhatsApp: (
+      <SiWhatsapp size={32} className="hover:text-identity" title="WhatsApp" />
+    ),
   };
-  return iconMap[stackName];
+  return (
+    iconMap[stackName] ?? (
+      <span className="inline-flex h-8 items-center rounded-md border border-identity/30 px-2 font-mono text-[11px] uppercase tracking-wider text-identity">
+        {stackName}
+      </span>
+    )
+  );
 }

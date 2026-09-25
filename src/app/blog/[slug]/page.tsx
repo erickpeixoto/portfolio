@@ -33,7 +33,9 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  const post = await getPost(params.slug);
+  const result = await getPost(params.slug).catch(() => null);
+  if (!result || "error" in result) notFound();
+  const post = result;
 
   metadata = constructMetadata({
     title: post?.title,

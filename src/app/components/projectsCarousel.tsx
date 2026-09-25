@@ -9,27 +9,27 @@ import {
 import Image from "next/image";
 
 export default function ProjectCarousel(project: Project) {
+  const multiple = project.images.length > 1;
   return (
-    <Carousel
-      className="w-screen md:w-full md:h-[400px] h-[300px] md:ml-0 md:mr-0 -mt-5 md:-mt-0 
-    dark:border-gray-800 border-t-1 border-identity/65 overflow-hidden"
-    >
+    <Carousel className="w-full">
       <CarouselContent>
-        {project?.images.map((image, index) => (
-          <CarouselItem key={index}>
-            <Image
-              key={index}
-              src={image}
-              alt={project?.description}
-              width={800}
-              height={400}
-              className="mb-4 w-full md:h-[400px] h-[300px] object-down"
-            />
+        {project.images.map((image, index) => (
+          <CarouselItem key={image}>
+            <div className="relative w-full aspect-video bg-[--surface-1]">
+              <Image
+                src={image}
+                alt={`${project.title}, screen ${index + 1}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 960px"
+                className="object-contain"
+                priority={index === 0}
+              />
+            </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      {multiple && <CarouselPrevious className="left-3" />}
+      {multiple && <CarouselNext className="right-3" />}
     </Carousel>
   );
 }
